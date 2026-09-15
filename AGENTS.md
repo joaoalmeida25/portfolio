@@ -1,9 +1,263 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# AGENTS.md
 
-# This is NOT the Next.js you know
+## Project
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+Professional portfolio built with:
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- ESLint
+- Prettier
 
-<!-- END:nextjs-agent-rules -->
+The application uses the Next.js App Router and is intended to remain simple, maintainable, responsive and performant.
+
+---
+
+## General principles
+
+- Prefer simple solutions over unnecessary abstractions.
+- Do not overengineer the project.
+- Do not add dependencies unless they provide clear value.
+- Keep components small and focused.
+- Preserve existing conventions when modifying code.
+- Use TypeScript strictly and avoid `any` unless absolutely necessary.
+- Code, identifiers and technical naming should be written in English.
+
+---
+
+## Folder organization
+
+Use feature-based organization.
+
+```text
+src/
+├── app/
+├── features/
+│   └── home/
+│       ├── components/
+│       ├── home-controller.component.tsx
+│       └── home-view.component.tsx
+├── components/
+│   └── shared/
+├── hooks/
+├── lib/
+└── types/
+```
+
+### Responsibilities
+
+`app/`
+- Next.js routing and framework-specific files.
+- Pages should mainly compose/import application features.
+
+`features/`
+- Business/UI features grouped by domain.
+- Feature-specific components stay inside their feature.
+
+`components/shared/`
+- Components reused by multiple features.
+
+`hooks/`
+- Truly shared hooks.
+
+`lib/`
+- Utilities, configuration and framework-independent helpers.
+
+`types/`
+- Shared TypeScript types when they do not belong to a specific feature.
+
+Do not create empty folders or abstractions without current usage.
+
+---
+
+## Naming conventions
+
+Use **kebab-case** for files and folders.
+
+Examples:
+
+```text
+hero.component.tsx
+case-card.component.tsx
+home-controller.component.tsx
+home-view.component.tsx
+use-theme.hook.ts
+```
+
+### File suffixes
+
+React components:
+
+```text
+*.component.tsx
+```
+
+Hooks:
+
+```text
+*.hook.ts
+```
+
+Use `.tsx` only when the file actually contains JSX.
+
+Do not rename Next.js reserved files:
+
+```text
+page.tsx
+layout.tsx
+loading.tsx
+error.tsx
+not-found.tsx
+```
+
+---
+
+## React conventions
+
+Use arrow functions declared with `const`.
+
+Preferred:
+
+```tsx
+export const Hero = () => {
+  return <section />;
+};
+```
+
+Do not use function declarations for application components.
+
+Avoid:
+
+```tsx
+export function Hero() {
+  return <section />;
+}
+```
+
+---
+
+## Exports
+
+Use **named exports** for:
+
+- components
+- controllers
+- views
+- hooks
+- utilities
+
+Example:
+
+```tsx
+export const HomeView = () => {
+  return <main />;
+};
+```
+
+Do not use default exports in regular application modules.
+
+### Next.js exception
+
+Framework files may use `default export` when required by Next.js.
+
+Preferred pattern:
+
+```tsx
+const HomePage = () => {
+  return <HomeController />;
+};
+
+export default HomePage;
+```
+
+---
+
+## Controller / View pattern
+
+Use Controller/View when separation provides real value.
+
+Controller:
+- state
+- hooks
+- handlers
+- orchestration
+- data preparation
+
+View:
+- presentation
+- JSX
+- receives prepared data through props
+
+Example:
+
+```text
+home/
+├── home-controller.component.tsx
+├── home-view.component.tsx
+└── components/
+```
+
+Do not create controllers for simple presentational components without logic.
+
+---
+
+## Styling
+
+Use Tailwind CSS as the primary styling solution.
+
+Guidelines:
+
+- Prefer Tailwind utilities over custom CSS.
+- Keep `globals.css` limited to global styles, Tailwind setup and true application-wide rules.
+- Avoid inline styles unless technically justified.
+- Keep responsive behavior explicit.
+- Support light/dark mode consistently when implemented.
+
+---
+
+## Code quality
+
+Before considering a task complete, run:
+
+```bash
+npm run lint
+npm run build
+```
+
+If formatting scripts are available, also run the appropriate Prettier check.
+
+Do not ignore lint or TypeScript errors merely to make the build pass.
+
+---
+
+## Git
+
+Use Conventional Commits in English.
+
+Examples:
+
+```text
+feat: add hero section
+fix: adjust mobile navigation
+refactor: reorganize home feature
+chore: configure prettier
+docs: update readme
+```
+
+Do not create commits unless explicitly requested.
+
+---
+
+## Scope discipline
+
+When implementing a task:
+
+1. Change only what is necessary for the requested scope.
+2. Do not refactor unrelated code.
+3. Do not introduce new architecture without justification.
+4. Do not implement future features preemptively.
+5. Report relevant technical decisions or deviations at the end.
+
+For this portfolio, clarity and maintainability are more important than architectural complexity.
