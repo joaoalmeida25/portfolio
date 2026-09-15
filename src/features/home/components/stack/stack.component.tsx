@@ -1,8 +1,8 @@
 import { StackView } from './stack-view.component';
-import type { EngineeringPracticeData, Technology } from './stack.types';
+import type { IEngineeringPracticeData, ITechnology } from './stack.types';
 
 export const Stack = () => {
-  const technologies: Array<Technology> = [
+  const technologies: Array<ITechnology> = [
     { name: 'React', iconPath: '/icons/brands/react.svg' },
     { name: 'Next.js', iconPath: '/icons/brands/nextjs.svg', monochrome: true },
     { name: 'TypeScript', iconPath: '/icons/brands/typescript.svg' },
@@ -15,7 +15,7 @@ export const Stack = () => {
     { name: 'Git', iconPath: '/icons/brands/git.svg' },
   ];
 
-  const practices: Array<EngineeringPracticeData> = [
+  const practices: Array<IEngineeringPracticeData> = [
     { label: 'Clean Architecture' },
     { label: 'Automated Testing' },
     { label: 'CI/CD' },

@@ -1,4 +1,4 @@
-export interface ProfessionalExperience {
+export interface IProfessionalExperience {
   id: string;
   period: string;
   company: string;

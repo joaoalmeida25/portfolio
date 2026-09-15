@@ -1,9 +1,9 @@
-export interface Technology {
+export interface ITechnology {
   name: string;
   iconPath: string;
   monochrome?: boolean;
 }
 
-export interface EngineeringPracticeData {
+export interface IEngineeringPracticeData {
   label: string;
 }

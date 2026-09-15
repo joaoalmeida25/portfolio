@@ -1,16 +1,16 @@
 import { SectionHeading } from '../section-heading/section-heading.component';
 import { EngineeringPractice } from './components/engineering-practice/engineering-practice.component';
 import { TechnologyItem } from './components/technology-item/technology-item.component';
-import type { EngineeringPracticeData, Technology } from './stack.types';
+import type { IEngineeringPracticeData, ITechnology } from './stack.types';
 
-interface StackViewProps {
+interface IStackViewProps {
   title: string;
-  technologies: readonly Technology[];
+  technologies: readonly ITechnology[];
   practicesLabel: string;
-  practices: readonly EngineeringPracticeData[];
+  practices: readonly IEngineeringPracticeData[];
 }
 
-export const StackView = ({ title, technologies, practicesLabel, practices }: StackViewProps) => {
+export const StackView = ({ title, technologies, practicesLabel, practices }: IStackViewProps) => {
   return (
     <section aria-labelledby="stack-title" className="border-t border-border/60 bg-background-soft">
       <div className="mx-auto max-w-[120rem] px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24 xl:px-24">

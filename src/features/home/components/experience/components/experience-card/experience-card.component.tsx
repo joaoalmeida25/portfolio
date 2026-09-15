@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button/button.component';
 
-interface ExperienceCardProps {
+interface IExperienceCardProps {
   triggerId: string;
   detailsId: string;
   period: string;
@@ -24,7 +24,7 @@ export const ExperienceCard = ({
   isCurrent,
   isSelected,
   onSelect,
-}: ExperienceCardProps) => {
+}: IExperienceCardProps) => {
   return (
     <article className="relative flex h-full flex-col pt-10">
       <span

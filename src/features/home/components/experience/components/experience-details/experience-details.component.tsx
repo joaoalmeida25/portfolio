@@ -1,9 +1,9 @@
-interface ExperienceDetailsProps {
+interface IExperienceDetailsProps {
   id: string;
   details: readonly string[];
 }
 
-export const ExperienceDetails = ({ id, details }: ExperienceDetailsProps) => {
+export const ExperienceDetails = ({ id, details }: IExperienceDetailsProps) => {
   return (
     <section
       id={id}

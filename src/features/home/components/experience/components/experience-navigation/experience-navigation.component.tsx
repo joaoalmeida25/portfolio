@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button/button.component';
 
-interface ExperienceNavigationProps {
+interface IExperienceNavigationProps {
   timelineId: string;
   canGoPrevious: boolean;
   canGoNext: boolean;
@@ -14,7 +14,7 @@ export const ExperienceNavigation = ({
   canGoNext,
   onPrevious,
   onNext,
-}: ExperienceNavigationProps) => {
+}: IExperienceNavigationProps) => {
   return (
     <div
       role="group"

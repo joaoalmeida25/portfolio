@@ -2,7 +2,7 @@ export type HeroContactVariant = 'primary' | 'secondary';
 
 export type HeroContactIcon = 'email' | 'document' | 'linkedin' | 'github';
 
-export interface HeroContact {
+export interface IHeroContact {
   label: string;
   href?: string;
   icon: HeroContactIcon;
@@ -11,7 +11,7 @@ export interface HeroContact {
   download?: boolean;
 }
 
-export interface HeroBackgrounds {
+export interface IHeroBackgrounds {
   dark: string;
   light: string;
 }

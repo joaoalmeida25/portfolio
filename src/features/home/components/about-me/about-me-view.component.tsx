@@ -1,14 +1,14 @@
 import { SectionHeading } from '../section-heading/section-heading.component';
 import { AboutHighlight } from './components/about-highlight/about-highlight.component';
-import type { AboutHighlightData } from './about-me.types';
+import type { IAboutHighlightData } from './about-me.types';
 
-interface AboutMeViewProps {
+interface IAboutMeViewProps {
   title: string;
   paragraphs: readonly string[];
-  highlights: readonly AboutHighlightData[];
+  highlights: readonly IAboutHighlightData[];
 }
 
-export const AboutMeView = ({ title, paragraphs, highlights }: AboutMeViewProps) => {
+export const AboutMeView = ({ title, paragraphs, highlights }: IAboutMeViewProps) => {
   return (
     <section
       aria-labelledby="about-me-title"

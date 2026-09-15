@@ -1,9 +1,9 @@
-interface FooterViewProps {
+interface IFooterViewProps {
   name: string;
   year: number;
 }
 
-export const FooterView = ({ name, year }: FooterViewProps) => {
+export const FooterView = ({ name, year }: IFooterViewProps) => {
   return (
     <footer className="border-t border-border/50 bg-background">
       <div className="mx-auto max-w-[120rem] px-6 py-8 sm:px-10 lg:px-16 xl:px-24">

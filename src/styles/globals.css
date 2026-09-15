@@ -42,15 +42,19 @@
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --background: var(--primitive-neutral-950);
-  --background-soft: var(--primitive-neutral-900);
-  --surface: var(--primitive-neutral-850);
-  --surface-hover: var(--primitive-neutral-800);
-  --border: var(--primitive-neutral-700);
+  --background: color-mix(in srgb, var(--primitive-neutral-950) 90%, var(--primitive-gray-400));
+  --background-soft: color-mix(
+    in srgb,
+    var(--primitive-neutral-900) 86%,
+    var(--primitive-gray-400)
+  );
+  --surface: color-mix(in srgb, var(--primitive-neutral-850) 80%, var(--primitive-gray-400));
+  --surface-hover: color-mix(in srgb, var(--primitive-neutral-800) 80%, var(--primitive-gray-400));
+  --border: color-mix(in srgb, var(--primitive-neutral-700) 74%, var(--primitive-gray-400));
 
   --text-primary: var(--primitive-gray-50);
   --text-secondary: var(--primitive-gray-400);
-  --text-muted: var(--primitive-gray-500);
+  --text-muted: color-mix(in srgb, var(--primitive-gray-500) 20%, var(--primitive-gray-400));
 
   --primary: var(--primitive-purple-600);
   --primary-foreground: var(--primitive-white);
@@ -69,11 +73,11 @@
 :root[data-theme='light'] {
   color-scheme: light;
 
-  --background: var(--primitive-neutral-50);
-  --background-soft: var(--primitive-neutral-100);
+  --background: color-mix(in srgb, var(--primitive-neutral-50) 72%, var(--primitive-gray-200));
+  --background-soft: color-mix(in srgb, var(--primitive-neutral-50) 40%, var(--primitive-gray-200));
   --surface: var(--primitive-white);
-  --surface-hover: var(--primitive-neutral-150);
-  --border: var(--primitive-neutral-300);
+  --surface-hover: var(--primitive-neutral-100);
+  --border: color-mix(in srgb, var(--primitive-gray-200) 80%, var(--primitive-gray-400));
 
   --text-primary: var(--primitive-navy-950);
   --text-secondary: var(--primitive-navy-900);
@@ -85,7 +89,7 @@
   --primary-soft: var(--primitive-neutral-200);
 
   --icon-surface: var(--primitive-neutral-150);
-  --chip-background: var(--primitive-neutral-150);
+  --chip-background: var(--primitive-neutral-200);
   --focus-ring: var(--primitive-purple-500);
 
   --hero-gradient-from: var(--primitive-purple-500);

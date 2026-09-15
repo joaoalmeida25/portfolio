@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import { HeroContactLink } from './components/hero-contact-link/hero-contact-link.component';
-import type { HeroBackgrounds, HeroContact } from './hero.types';
+import type { IHeroBackgrounds, IHeroContact } from './hero.types';
 
-interface HeroViewProps {
+interface IHeroViewProps {
   firstName: string;
   lastName: string;
   role: string;
   description: string;
-  contacts: Array<HeroContact>;
-  backgrounds: HeroBackgrounds;
+  contacts: Array<IHeroContact>;
+  backgrounds: IHeroBackgrounds;
 }
 
 export const HeroView = ({
@@ -18,7 +18,7 @@ export const HeroView = ({
   description,
   contacts,
   backgrounds,
-}: HeroViewProps) => {
+}: IHeroViewProps) => {
   return (
     <section
       aria-labelledby="hero-title"

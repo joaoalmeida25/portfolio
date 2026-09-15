@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { AboutHighlightIcon } from '../../about-me.types';
 
-interface AboutHighlightProps {
+interface IAboutHighlightProps {
   title: string;
   description: string;
   icon: AboutHighlightIcon;
@@ -27,7 +27,7 @@ const icons: Record<AboutHighlightIcon, ReactNode> = {
   ),
 };
 
-export const AboutHighlight = ({ title, description, icon }: AboutHighlightProps) => {
+export const AboutHighlight = ({ title, description, icon }: IAboutHighlightProps) => {
   return (
     <div className="grid grid-cols-[auto_1fr] items-start gap-x-4">
       <dt className="contents">

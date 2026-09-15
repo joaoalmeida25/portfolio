@@ -3,11 +3,11 @@ import { SectionHeading } from '../section-heading/section-heading.component';
 import { ExperienceCard } from './components/experience-card/experience-card.component';
 import { ExperienceDetails } from './components/experience-details/experience-details.component';
 import { ExperienceNavigation } from './components/experience-navigation/experience-navigation.component';
-import type { ProfessionalExperience } from './experience.types';
+import type { IProfessionalExperience } from './experience.types';
 
-interface ExperienceViewProps {
-  experiences: readonly ProfessionalExperience[];
-  activeExperience: ProfessionalExperience | null;
+interface IExperienceViewProps {
+  experiences: readonly IProfessionalExperience[];
+  activeExperience: IProfessionalExperience | null;
   activeTimelineIndex: number;
   timelineRef: RefObject<HTMLOListElement | null>;
   canGoPrevious: boolean;
@@ -27,7 +27,7 @@ export const ExperienceView = ({
   onPrevious,
   onNext,
   onSelect,
-}: ExperienceViewProps) => {
+}: IExperienceViewProps) => {
   return (
     <section
       aria-labelledby="experience-title"

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-interface TechnologyItemProps {
+interface ITechnologyItemProps {
   name: string;
   iconPath: string;
   monochrome?: boolean;
 }
 
-export const TechnologyItem = ({ name, iconPath, monochrome = false }: TechnologyItemProps) => {
+export const TechnologyItem = ({ name, iconPath, monochrome = false }: ITechnologyItemProps) => {
   return (
     <li className="flex min-w-0 flex-col items-center gap-4 rounded-control border border-border/40 bg-surface/50 px-3 py-6 text-center">
       <span className="flex size-12 items-center justify-center">

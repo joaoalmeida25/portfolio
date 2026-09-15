@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button/button.component';
 import type { HeroContactIcon, HeroContactVariant } from '../../hero.types';
 
-interface HeroContactLinkProps {
+interface IHeroContactLinkProps {
   label: string;
   href?: string;
   icon: HeroContactIcon;
@@ -18,7 +18,7 @@ export const HeroContactLink = ({
   variant = 'secondary',
   external = false,
   download = false,
-}: HeroContactLinkProps) => {
+}: IHeroContactLinkProps) => {
   const actionProps = href
     ? { href, target: external ? '_blank' : undefined, download }
     : { disabled: true, title: 'Currículo indisponível no momento' };

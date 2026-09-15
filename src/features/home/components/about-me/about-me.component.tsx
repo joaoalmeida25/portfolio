@@ -1,5 +1,5 @@
 import { AboutMeView } from './about-me-view.component';
-import type { AboutHighlightData } from './about-me.types';
+import type { IAboutHighlightData } from './about-me.types';
 import { useMemo } from 'react';
 
 const paragraphs = [
@@ -10,7 +10,7 @@ const paragraphs = [
 
 export const AboutMe = () => {
   const highlights = useMemo(
-    (): Array<AboutHighlightData> => [
+    (): Array<IAboutHighlightData> => [
       { title: '7+ anos', description: 'de experiência profissional', icon: 'experience' },
       {
         title: 'Problemas reais',

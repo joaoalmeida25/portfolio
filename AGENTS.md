@@ -58,6 +58,9 @@ src/
 
 - Business/UI features grouped by domain.
 - Feature-specific components stay inside their feature.
+- Features used by multiple pages must not be owned by Home.
+- Keep complex static data in `.constants.ts`; project content has a single source of truth.
+- Omit optional link actions when no real URL is available.
 
 `components/shared/`
 
@@ -235,6 +238,14 @@ Place `'use client'` on the interactive orchestrator instead of the entire page 
 ## TypeScript contracts
 
 - Use `interface` for component props and structural object models.
+- All project-owned interfaces must use the `I` prefix, for example `IProject`,
+  `IButtonProps` and `IHomeViewProps`. Do not duplicate an existing prefix.
+- This prefix is exclusive to interfaces; do not apply it to type aliases, enums,
+  classes or other symbols, or rename interfaces from external dependencies.
+- Arrays in interfaces and typed contracts must use `Array<T>`, never `T[]`;
+  for example, `IProject` uses `Array<IProjectImage>` and `Array<string>`.
+  Apply the same syntax to typed constants, such as `PROJECTS: Array<IProject>`;
+  runtime array literals (`[]`) remain unchanged.
 - Each component owns its props interface; keep it in the component file when it is local.
 - ControllerProps and ViewProps are different contracts. Do not reuse a View's
   props interface as the controller's props.

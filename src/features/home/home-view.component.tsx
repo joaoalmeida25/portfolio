@@ -1,4 +1,5 @@
 import { ThemeToggle } from '@/components/theme-toggle/theme-toggle.component';
+import { ProjectsSection } from '@/features/home/components/projects-section/projects-section.component';
 import { AboutMe } from './components/about-me/about-me.component';
 import { Experience } from './components/experience/experience.component';
 import { Footer } from './components/footer/footer.component';
@@ -14,6 +15,7 @@ export const HomeView = () => {
         <AboutMe />
         <Experience />
         <Stack />
+        <ProjectsSection />
       </main>
       <Footer />
     </>

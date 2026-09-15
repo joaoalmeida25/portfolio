@@ -1,10 +1,10 @@
 import { HeroView } from './hero-view.component';
-import type { HeroBackgrounds, HeroContact } from './hero.types';
+import type { IHeroBackgrounds, IHeroContact } from './hero.types';
 import { useMemo } from 'react';
 
 export const Hero = () => {
   const contacts = useMemo(
-    (): Array<HeroContact> => [
+    (): Array<IHeroContact> => [
       {
         label: 'Enviar e-mail',
         href: 'mailto:jv.almeidaa25@gmail.com',
@@ -37,7 +37,7 @@ export const Hero = () => {
   );
 
   const backgrounds = useMemo(
-    (): HeroBackgrounds => ({
+    (): IHeroBackgrounds => ({
       dark: '/images/hero/hero-background-dark.png',
       light: '/images/hero/hero-background-light.png',
     }),

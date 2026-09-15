@@ -4,7 +4,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
-interface ButtonAppearanceProps {
+interface IButtonAppearanceProps {
   variant?: ButtonVariant;
   children: ReactNode;
   leftIcon?: ReactNode;
@@ -12,11 +12,11 @@ interface ButtonAppearanceProps {
   className?: string;
 }
 
-interface NativeButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface INativeButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: never;
 }
 
-interface AnchorButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface IAnchorButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   disabled?: never;
 }
@@ -24,6 +24,6 @@ interface AnchorButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 type ButtonSizeProps =
   { size: 'icon'; 'aria-label': string } | { size?: Exclude<ButtonSize, 'icon'> };
 
-export type ButtonProps = ButtonAppearanceProps &
+export type ButtonProps = IButtonAppearanceProps &
   ButtonSizeProps &
-  (NativeButtonProps | AnchorButtonProps);
+  (INativeButtonProps | IAnchorButtonProps);

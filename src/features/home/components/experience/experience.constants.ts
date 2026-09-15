@@ -1,6 +1,6 @@
-import { ProfessionalExperience } from '@/features/home/components/experience/experience.types';
+import { IProfessionalExperience } from '@/features/home/components/experience/experience.types';
 
-export const experiences: Array<ProfessionalExperience> = [
+export const experiences: Array<IProfessionalExperience> = [
   {
     id: 'logshare',
     period: '02/2024 — Atual',
