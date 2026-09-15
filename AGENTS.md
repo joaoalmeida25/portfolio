@@ -225,6 +225,17 @@ Guidelines:
 
 ---
 
+## Theming and design tokens
+
+- The default theme is dark.
+- Light and dark themes are controlled by `data-theme` on the root HTML element.
+- The user's theme preference is saved in `localStorage`.
+- Components must use semantic tokens, never primitive tokens directly.
+- Do not hardcode colors when an equivalent semantic token exists.
+- Tailwind utilities must consume semantic tokens.
+
+---
+
 ## Code quality
 
 Before considering a task complete, run:
