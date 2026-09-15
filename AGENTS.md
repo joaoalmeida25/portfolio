@@ -49,23 +49,29 @@ src/
 ### Responsibilities
 
 `app/`
+
 - Next.js routing and framework-specific files.
 - Pages should mainly compose/import application features.
 
 `features/`
+
 - Business/UI features grouped by domain.
 - Feature-specific components stay inside their feature.
 
 `components/shared/`
+
 - Components reused by multiple features.
 
 `hooks/`
+
 - Truly shared hooks.
 
 `lib/`
+
 - Utilities, configuration and framework-independent helpers.
 
 `types/`
+
 - Shared TypeScript types when they do not belong to a specific feature.
 
 Do not create empty folders or abstractions without current usage.
@@ -179,6 +185,7 @@ export default HomePage;
 Use Controller/View when separation provides real value.
 
 Controller:
+
 - state
 - hooks
 - handlers
@@ -186,6 +193,7 @@ Controller:
 - data preparation
 
 View:
+
 - presentation
 - JSX
 - receives prepared data through props

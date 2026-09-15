@@ -1,4 +1,4 @@
-import { HomeController } from "@/features/home/home-controller.component";
+import { HomeController } from '@/features/home/home-controller.component';
 
 const HomePage = () => {
   return <HomeController />;
