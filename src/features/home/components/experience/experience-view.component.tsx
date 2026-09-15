@@ -15,7 +15,6 @@ interface ExperienceViewProps {
   onPrevious: () => void;
   onNext: () => void;
   onSelect: (id: string) => void;
-  onCloseDetails: () => void;
 }
 
 export const ExperienceView = ({
@@ -28,7 +27,6 @@ export const ExperienceView = ({
   onPrevious,
   onNext,
   onSelect,
-  onCloseDetails,
 }: ExperienceViewProps) => {
   return (
     <section
@@ -82,12 +80,7 @@ export const ExperienceView = ({
         {activeExperience && (
           <ExperienceDetails
             id={`experience-details-${activeExperience.id}`}
-            company={activeExperience.company}
-            context={activeExperience.context}
-            role={activeExperience.role}
-            period={activeExperience.period}
             details={activeExperience.details}
-            onClose={onCloseDetails}
           />
         )}
       </div>

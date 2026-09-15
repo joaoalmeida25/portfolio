@@ -63,6 +63,12 @@ src/
 
 - Components reused by multiple features.
 
+`components/ui/`
+
+- Reusable visual primitives.
+- Equivalent visual actions reuse the shared Button with generic variants/sizes, independent of features.
+- Preserve native semantics: `<button>` for actions and `<a>` for links.
+
 `hooks/`
 
 - Truly shared hooks.

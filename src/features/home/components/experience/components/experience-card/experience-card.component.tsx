@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button/button.component';
+
 interface ExperienceCardProps {
   triggerId: string;
   detailsId: string;
@@ -36,36 +38,37 @@ export const ExperienceCard = ({
         <p className="mt-3 text-sm leading-6 text-text-secondary italic">{role}</p>
         <p className="mt-3 line-clamp-3 text-sm leading-6 text-text-secondary">{summary}</p>
         <div className="mt-auto pt-5">
-          <button
+          <Button
             id={triggerId}
-            type="button"
+            variant={isSelected ? 'primary' : 'outline'}
+            size="sm"
             aria-expanded={isSelected}
             aria-controls={isSelected ? detailsId : undefined}
             onClick={onSelect}
-            className="inline-flex min-h-11 items-center gap-3 rounded-control border border-primary px-4 py-2 text-sm font-medium text-text-primary hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            rightIcon={
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d={isSelected ? 'M6 12h12' : 'M4 12h16m-6-6 6 6-6 6'} />
+              </svg>
+            }
           >
             {isSelected ? 'Ver menos' : 'Ver mais'}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-              focusable="false"
-              className="shrink-0"
-            >
-              <path d={isSelected ? 'M6 12h12' : 'M4 12h16m-6-6 6 6-6 6'} />
-            </svg>
             <span className="sr-only">
               {' '}
               sobre {company}
               {context ? ` — ${context}` : ''}
             </span>
-          </button>
+          </Button>
         </div>
       </div>
     </article>

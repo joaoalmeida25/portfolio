@@ -12,6 +12,13 @@ export const Hero = () => {
         variant: 'primary',
       },
       {
+        label: 'Currículo',
+        icon: 'document',
+        variant: 'secondary',
+        download: true,
+        href: '/documents/curriculo.pdf',
+      },
+      {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/joão-vitor-almeida-54439b19b',
         icon: 'linkedin',

@@ -63,11 +63,6 @@ export const Experience = () => {
     setSelectedId((currentId) => (currentId === id ? null : id));
   };
 
-  const closeDetails = () => {
-    document.getElementById(`experience-trigger-${selectedId}`)?.focus({ preventScroll: true });
-    setSelectedId(null);
-  };
-
   return (
     <ExperienceView
       experiences={experiences}
@@ -79,7 +74,6 @@ export const Experience = () => {
       onPrevious={() => navigate(-1)}
       onNext={() => navigate(1)}
       onSelect={selectExperience}
-      onCloseDetails={closeDetails}
     />
   );
 };
