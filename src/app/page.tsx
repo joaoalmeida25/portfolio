@@ -1,7 +1,7 @@
-import { HomeController } from '@/features/home/home-controller.component';
+import { Home } from '@/features/home/home.component';
 
 const HomePage = () => {
-  return <HomeController />;
+  return <Home />;
 };
 
 export default HomePage;

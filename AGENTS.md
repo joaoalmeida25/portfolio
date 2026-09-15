@@ -37,12 +37,13 @@ src/
 ├── features/
 │   └── home/
 │       ├── components/
-│       ├── home-controller.component.tsx
+│       ├── home.component.tsx
 │       └── home-view.component.tsx
 ├── components/
 │   └── shared/
+├── constants/
 ├── hooks/
-├── lib/
+├── styles/
 └── types/
 ```
 
@@ -66,15 +67,22 @@ src/
 
 - Truly shared hooks.
 
-`lib/`
+`constants/`
 
-- Utilities, configuration and framework-independent helpers.
+- Shared application constants.
+
+`styles/`
+
+- Global styles, Tailwind setup and theme tokens.
 
 `types/`
 
 - Shared TypeScript types when they do not belong to a specific feature.
 
 Do not create empty folders or abstractions without current usage.
+
+Each component must have its own folder. An orchestrator and its View share
+the same component folder; child components have their own folders.
 
 ---
 
@@ -87,7 +95,7 @@ Examples:
 ```text
 hero.component.tsx
 case-card.component.tsx
-home-controller.component.tsx
+home.component.tsx
 home-view.component.tsx
 use-theme.hook.ts
 ```
@@ -172,7 +180,7 @@ Preferred pattern:
 
 ```tsx
 const HomePage = () => {
-  return <HomeController />;
+  return <Home />;
 };
 
 export default HomePage;
@@ -184,7 +192,11 @@ export default HomePage;
 
 Use Controller/View when separation provides real value.
 
-Controller:
+The controller/orchestrator uses `<name>.component.tsx` and exports the component
+name (for example, `Home`, `Hero` or `AboutMe`). Do not use `controller` in the filename.
+The View uses `<name>-view.component.tsx` and exports `<Name>View`.
+
+Controller/orchestrator:
 
 - state
 - hooks
@@ -202,12 +214,28 @@ Example:
 
 ```text
 home/
-├── home-controller.component.tsx
+├── home.component.tsx
 ├── home-view.component.tsx
 └── components/
 ```
 
 Do not create controllers for simple presentational components without logic.
+
+---
+
+## TypeScript contracts
+
+- Use `interface` for component props and structural object models.
+- Each component owns its props interface; keep it in the component file when it is local.
+- ControllerProps and ViewProps are different contracts. Do not reuse a View's
+  props interface as the controller's props.
+- Do not use child component props as the parent's data model.
+- Shared section models belong in `<name>.types.ts` inside that section's folder
+  (for example, `hero.types.ts`). Create this file only when sharing is needed.
+- Views receive section models and pass the necessary fields to child components.
+- Use `type` normally for unions and other cases where it is technically appropriate,
+  such as `type HeroContactVariant = 'primary' | 'secondary'`.
+- Components without props do not need empty props interfaces.
 
 ---
 

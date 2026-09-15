@@ -1,0 +1,86 @@
+import Image from 'next/image';
+import { HeroContactLink } from './components/hero-contact-link/hero-contact-link.component';
+import type { HeroBackgrounds, HeroContact } from './hero.types';
+
+interface HeroViewProps {
+  firstName: string;
+  lastName: string;
+  role: string;
+  description: string;
+  contacts: Array<HeroContact>;
+  backgrounds: HeroBackgrounds;
+}
+
+export const HeroView = ({
+  firstName,
+  lastName,
+  role,
+  description,
+  contacts,
+  backgrounds,
+}: HeroViewProps) => {
+  return (
+    <section
+      aria-labelledby="hero-title"
+      className="relative isolate overflow-hidden bg-background-soft"
+    >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <Image
+          src={backgrounds.dark}
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          quality={95}
+          sizes="100vw"
+          className="object-cover object-[68%_top] md:object-[50%_center] lg:object-center [[data-theme=light]_&]:hidden"
+        />
+        {backgrounds.light && (
+          <Image
+            src={backgrounds.light}
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            quality={95}
+            sizes="100vw"
+            className="hidden object-cover object-[68%_top] md:object-[50%_center] lg:object-center [[data-theme=light]_&]:block"
+          />
+        )}
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-linear-to-t from-background from-15% via-background/90 via-45% to-background/0 to-85% md:bg-linear-to-r md:from-background/80 md:from-0% md:via-background/30 md:via-45% md:to-background/0 md:to-65% lg:from-background/30 lg:via-background/0"
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-[120rem] items-center px-6 pt-104 pb-16 sm:px-10 md:min-h-152 md:py-24 lg:min-h-[clamp(36rem,41vw,50rem)] lg:px-16 xl:px-24">
+        <div className="min-w-0 max-w-xl md:w-1/2 md:max-w-2xl">
+          <h1
+            id="hero-title"
+            className="text-5xl leading-[1.05] font-semibold tracking-tight text-text-primary sm:text-6xl lg:text-7xl xl:text-8xl"
+          >
+            {firstName} <span className="text-primary">{lastName}</span>
+          </h1>
+          <p className="mt-5 text-xl font-medium tracking-tight text-text-primary sm:text-2xl xl:text-3xl">
+            {role}
+          </p>
+          <p className="mt-6 max-w-md text-base leading-relaxed text-text-secondary sm:text-lg xl:mt-8 xl:max-w-lg xl:text-xl">
+            {description}
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-3 xl:mt-10">
+            {contacts.map((contact) => (
+              <HeroContactLink
+                key={contact.href}
+                label={contact.label}
+                href={contact.href}
+                icon={contact.icon}
+                variant={contact.variant}
+                external={contact.external}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

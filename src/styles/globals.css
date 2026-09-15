@@ -45,6 +45,7 @@
   --text-muted: var(--primitive-gray-500);
 
   --primary: var(--primitive-purple-600);
+  --primary-foreground: var(--primitive-white);
   --primary-hover: var(--primitive-purple-500);
   --primary-soft: var(--primitive-neutral-800);
 
@@ -71,6 +72,7 @@
   --text-muted: var(--primitive-navy-700);
 
   --primary: var(--primitive-purple-500);
+  --primary-foreground: var(--primitive-white);
   --primary-hover: var(--primitive-purple-600);
   --primary-soft: var(--primitive-neutral-200);
 
@@ -98,6 +100,7 @@
   --color-text-muted: var(--text-muted);
 
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-primary-hover: var(--primary-hover);
   --color-primary-soft: var(--primary-soft);
 

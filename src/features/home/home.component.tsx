@@ -1,5 +1,5 @@
 import { HomeView } from './home-view.component';
 
-export const HomeController = () => {
+export const Home = () => {
   return <HomeView />;
 };

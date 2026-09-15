@@ -40,7 +40,6 @@ const RootLayout = ({ children }: LayoutProps<'/'>) => {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <title>João Almeida | Software Engineer</title>
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
