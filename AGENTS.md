@@ -221,6 +221,9 @@ home/
 
 Do not create controllers for simple presentational components without logic.
 
+Interactive components must keep the smallest practical Client Component boundary.
+Place `'use client'` on the interactive orchestrator instead of the entire page or Home.
+
 ---
 
 ## TypeScript contracts
@@ -250,6 +253,15 @@ Guidelines:
 - Avoid inline styles unless technically justified.
 - Keep responsive behavior explicit.
 - Support light/dark mode consistently when implemented.
+- Home section headings use simple titles without visual numbering or decorative lines before them.
+- Present engineering practices separately from technologies when they describe ways of working.
+
+### Icons and brand assets
+
+- Use local SVG assets from Simple Icons or official brand sources for brand logos.
+- Avoid installing an entire icon library when a few local assets are sufficient.
+- Official brand colors may appear inside brand SVGs only; layout and regular text still use semantic tokens.
+- Prefer small inline SVGs for simple functional icons.
 
 ---
 

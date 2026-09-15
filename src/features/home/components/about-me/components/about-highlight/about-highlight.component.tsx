@@ -14,12 +14,15 @@ const icons: Record<AboutHighlightIcon, ReactNode> = {
       <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12a22 22 0 0 0 18 0M12 11v4" />
     </>
   ),
-  products: <path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5" />,
-  impact: (
+  solution: (
     <>
-      <circle cx="12" cy="12" r="9" />
-      <circle cx="12" cy="12" r="5" />
-      <circle cx="12" cy="12" r="1" />
+      <path d="M8 15a6 6 0 1 1 8 0c-1 1-1 2-1 3H9c0-1 0-2-1-3ZM9 21h6M12 18v-5m-2-2 2 2 2-2" />
+    </>
+  ),
+  learning: (
+    <>
+      <path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1ZM12 6v14" />
+      <path d="M6 9h3M6 13h3M15 9h3M15 13h3" />
     </>
   ),
 };
@@ -48,7 +51,7 @@ export const AboutHighlight = ({ title, description, icon }: AboutHighlightProps
           {title}
         </span>
       </dt>
-      <dd className="col-start-2 mt-1 max-w-64 text-sm leading-relaxed text-text-secondary sm:text-base">
+      <dd className="col-start-2 mt-1 max-w-xs text-sm leading-relaxed text-text-secondary sm:text-base">
         {description}
       </dd>
     </div>

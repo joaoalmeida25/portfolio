@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+@utility scrollbar-hidden {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 :root {
   --primitive-purple-300: #a060f8;
   --primitive-purple-400: #9858f8;

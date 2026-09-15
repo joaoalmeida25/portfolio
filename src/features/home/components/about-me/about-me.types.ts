@@ -1,4 +1,4 @@
-export type AboutHighlightIcon = 'experience' | 'products' | 'impact';
+export type AboutHighlightIcon = 'experience' | 'solution' | 'learning';
 
 export interface AboutHighlightData {
   title: string;
