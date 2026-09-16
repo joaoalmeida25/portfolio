@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# João Almeida | Portfolio
 
-## Getting Started
+Portfólio pessoal desenvolvido para apresentar minha trajetória como Software Engineer, minhas experiências profissionais, stack, práticas de engenharia e projetos pessoais.
 
-First, run the development server:
+O projeto também funciona como uma aplicação prática de organização arquitetural, componentização, responsividade, design system e boas práticas de desenvolvimento.
+
+## Stack
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Vercel
+
+## Arquitetura
+
+O projeto utiliza o App Router do Next.js e uma organização baseada em features.
+
+Principais decisões:
+
+* Feature Folder
+* Separação entre Controller e View quando existe lógica de apresentação
+* Componentes visuais reutilizáveis
+* Dados estáticos centralizados em arquivos `.constants.ts`
+* Semantic tokens para suporte aos temas dark e light
+* Server Components por padrão
+* Client Components somente quando existe necessidade real de estado ou interação
+* Componentes globais reutilizáveis em `src/components`
+* Primitives visuais reutilizáveis em `src/components/ui`
+
+### Estrutura
+
+```text
+public/
+├── documents/
+├── icons/
+└── images/
+    ├── hero/
+    └── projects/
+
+src/
+├── app/
+│   └── projects/
+│       └── [slug]/
+├── components/
+│   ├── shared/
+│   └── ui/
+├── constants/
+├── features/
+│   ├── home/
+│   └── projects/
+├── hooks/
+├── styles/
+└── types/
+```
+
+## Padrões do projeto
+
+Algumas convenções adotadas:
+
+* Arquivos e pastas em `kebab-case`
+* Componentes React com `.component.tsx`
+* Arrow Functions e `const`
+* Named exports
+* Interfaces com prefixo `I`
+* Coleções tipadas utilizando `Array<T>`
+* `interface` para contratos de objetos
+* `type` para unions
+* Cada componente em sua própria pasta
+* Componentes reutilizáveis em `src/components/ui`
+* Cores consumidas através de semantic tokens
+* Dados de projetos centralizados em `projects.constants.ts`
+* Props de Controller e View mantidas como contratos distintos
+* SVGs de marcas armazenados localmente no projeto
+* Links e botões preservando a semântica correta de HTML
+
+Exemplo de separação Controller e View:
+
+```text
+hero/
+├── hero.component.tsx
+└── hero-view.component.tsx
+```
+
+O Controller concentra preparação de dados e comportamento.
+
+A View fica responsável pela apresentação.
+
+## Principais funcionalidades
+
+* Tema dark e light persistente
+* Layout responsivo
+* Experiência profissional interativa
+* Apresentação de stack e práticas de engenharia
+* Catálogo de projetos
+* Páginas dinâmicas em `/projects/[slug]`
+* Galeria de imagens por projeto
+* Links para GitHub, demonstração e documentação
+* Currículo disponível diretamente pelo portfólio
+* Theme toggle acessível e disponível durante a navegação
+
+## Projetos
+
+Inicialmente o portfólio apresenta dois projetos pessoais.
+
+### Predator Ubuntu Sense
+
+Control center open source para notebooks Acer Predator no Linux, centralizando recursos de hardware e sistema em uma experiência desktop.
+
+Principais tecnologias:
+
+* Rust
+* Tauri
+* React
+* TypeScript
+* Linux
+
+### AI Core
+
+Biblioteca de interface neural 3D para representar sistemas processando, pensando e se comunicando em tempo real.
+
+Principais tecnologias:
+
+* React
+* TypeScript
+* Three.js
+* 3D
+* Real-time
+
+Os projetos evoluem independentemente e seus conteúdos, imagens, demonstrações e documentações são atualizados conforme o desenvolvimento avança.
+
+## Executando localmente
+
+### Requisitos
+
+* Node.js
+* npm
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o ambiente de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação ficará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Qualidade
 
-## Learn More
+Antes de enviar alterações:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run format
+npm run format:check
+npm run lint
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O projeto utiliza Vercel com integração ao GitHub.
 
-## Deploy on Vercel
+* `main` publica em Production
+* Branches e Pull Requests geram Preview Deployments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Objetivo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este portfólio foi construído para apresentar de forma simples e visual meu trabalho como Software Engineer, além de servir como espaço para evolução de projetos, experimentos técnicos e soluções digitais.
