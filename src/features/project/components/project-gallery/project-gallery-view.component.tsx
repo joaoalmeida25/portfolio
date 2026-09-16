@@ -21,12 +21,13 @@ export const ProjectGalleryView = ({
 
   return (
     <div role="group" aria-label={`Galeria de ${title}`} className="min-w-0">
-      <div id={imageId} className="overflow-hidden rounded-card border border-border/50">
+      <div id={imageId} className="overflow-hidden rounded-control bg-background-soft">
         <ProjectPreview
           title={title}
           image={images[activeIndex]}
           sizes="(min-width: 1920px) 1018px, (min-width: 1280px) calc((100vw - 224px) * 0.6), (min-width: 1024px) calc((100vw - 160px) * 0.6), (min-width: 640px) calc(100vw - 80px), calc(100vw - 48px)"
           priority={activeIndex === 0}
+          className="!bg-background-soft"
         />
       </div>
       {hasMultipleImages && (

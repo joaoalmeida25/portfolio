@@ -6,11 +6,20 @@ interface IProjectPreviewProps {
   image?: IProjectImage;
   sizes: string;
   priority?: boolean;
+  className?: string;
+  imageClassName?: string;
 }
 
-export const ProjectPreview = ({ title, image, sizes, priority = false }: IProjectPreviewProps) => {
+export const ProjectPreview = ({
+  title,
+  image,
+  sizes,
+  priority = false,
+  className,
+  imageClassName = 'object-contain',
+}: IProjectPreviewProps) => {
   return (
-    <div className="relative aspect-video overflow-hidden bg-surface">
+    <div className={`relative aspect-video overflow-hidden bg-surface ${className ?? ''}`}>
       {image ? (
         <Image
           src={image.src}
@@ -18,7 +27,7 @@ export const ProjectPreview = ({ title, image, sizes, priority = false }: IProje
           fill
           sizes={sizes}
           priority={priority}
-          className="object-contain"
+          className={imageClassName}
         />
       ) : (
         <div

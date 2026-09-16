@@ -90,8 +90,8 @@ export const ProjectsSectionView = ({
           tabIndex={isScrollable && (canGoPrevious || canGoNext) ? 0 : undefined}
           className={`relative mt-10 grid lg:mt-12 ${
             isScrollable
-              ? 'scrollbar-hidden auto-cols-[100%] grid-flow-col gap-6 overflow-x-auto overscroll-x-contain snap-x snap-mandatory scroll-smooth py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring motion-reduce:scroll-auto md:auto-cols-[calc((100%_-_1.5rem)/2)] lg:auto-cols-[min(28.75rem,calc((100%_-_3rem)/3))] min-[112.5rem]:auto-cols-[calc((100%_-_4.5rem)/4)]'
-              : 'gap-8 md:grid-cols-[repeat(2,minmax(0,28.75rem))]'
+              ? 'scrollbar-hidden auto-cols-[100%] grid-flow-col gap-6 overflow-x-auto overscroll-x-contain snap-x snap-mandatory scroll-smooth py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring motion-reduce:scroll-auto md:auto-cols-[calc((100%_-_1.5rem)/2)] lg:auto-cols-[min(36rem,calc((100%_-_1.5rem)/2))] min-[120rem]:auto-cols-[calc((100%_-_4.5rem)/4)]'
+              : 'gap-8 md:grid-cols-[repeat(2,minmax(0,36rem))]'
           }`}
         >
           {projects.map((project) => (
@@ -100,7 +100,7 @@ export const ProjectsSectionView = ({
                 project={project}
                 imageSizes={
                   isScrollable
-                    ? '(min-width: 1920px) 414px, (min-width: 1800px) calc((100vw - 264px) / 4), (min-width: 1620px) 460px, (min-width: 1280px) calc((100vw - 240px) / 3), (min-width: 1024px) calc((100vw - 176px) / 3), (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 640px) calc(100vw - 80px), calc(100vw - 48px)'
+                    ? '(min-width: 1920px) 154px, (min-width: 1440px) 221px, (min-width: 1280px) 203px, (min-width: 1024px) 165px, (min-width: 768px) calc((100vw - 104px) / 2), (min-width: 640px) calc(100vw - 104px), calc(100vw - 72px)'
                     : undefined
                 }
               />
