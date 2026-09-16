@@ -99,36 +99,6 @@ A View fica responsável pela apresentação.
 * Currículo disponível diretamente pelo portfólio
 * Theme toggle acessível e disponível durante a navegação
 
-## Projetos
-
-Inicialmente o portfólio apresenta dois projetos pessoais.
-
-### Predator Ubuntu Sense
-
-Control center open source para notebooks Acer Predator no Linux, centralizando recursos de hardware e sistema em uma experiência desktop.
-
-Principais tecnologias:
-
-* Rust
-* Tauri
-* React
-* TypeScript
-* Linux
-
-### AI Core
-
-Biblioteca de interface neural 3D para representar sistemas processando, pensando e se comunicando em tempo real.
-
-Principais tecnologias:
-
-* React
-* TypeScript
-* Three.js
-* 3D
-* Real-time
-
-Os projetos evoluem independentemente e seus conteúdos, imagens, demonstrações e documentações são atualizados conforme o desenvolvimento avança.
-
 ## Executando localmente
 
 ### Requisitos
