@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { locale as getLocale } from 'next/root-params';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
 import { DEFAULT_THEME, THEME_STORAGE_KEY } from '@/constants/theme.constants';
+import { routing } from '@/i18n/routing';
 import '@/styles/globals.css';
 
 const geistSans = Geist({
@@ -30,10 +34,18 @@ const themeScript = `(() => {
   document.documentElement.style.colorScheme = theme;
 })();`;
 
-const RootLayout = ({ children }: LayoutProps<'/'>) => {
+export const generateStaticParams = () => {
+  return routing.locales.map((locale) => ({ locale }));
+};
+
+const RootLayout = async ({ children }: LayoutProps<'/[locale]'>) => {
+  const locale = await getLocale();
+
+  if (!hasLocale(routing.locales, locale)) notFound();
+
   return (
     <html
-      lang="pt-BR"
+      lang={locale}
       data-theme={DEFAULT_THEME}
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
@@ -41,7 +53,11 @@ const RootLayout = ({ children }: LayoutProps<'/'>) => {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NextIntlClientProvider locale={locale} messages={null}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 };

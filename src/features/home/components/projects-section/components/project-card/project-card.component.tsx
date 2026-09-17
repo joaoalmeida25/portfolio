@@ -3,6 +3,8 @@ import { ProjectPreview } from '@/components/project-preview/project-preview.com
 import { IProject } from '@/types/projects.type';
 import { ProjectStatus } from '@/components/project-status/project-status.component';
 import { ProjectTechnologies } from '@/components/project-technologies/project-technologies.component';
+import { getPathname } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 
 interface IProjectCardProps {
   project: IProject;
@@ -13,12 +15,14 @@ export const ProjectCard = ({
   project,
   imageSizes = '(min-width: 1440px) 221px, (min-width: 1280px) 201px, (min-width: 1024px) 161px, (min-width: 768px) calc((100vw - 112px) / 2), (min-width: 640px) calc(100vw - 104px), calc(100vw - 72px)',
 }: IProjectCardProps) => {
+  const locale = useLocale();
   const visibleTechnologies = project.technologies.slice(0, 3);
+  const href = getPathname({ href: `/projects/${project.slug}`, locale });
 
   return (
     <article className="h-full min-w-0">
       <Button
-        href={`/projects/${project.slug}`}
+        href={href}
         aria-label={`Abrir projeto ${project.title}`}
         variant="ghost"
         size="sm"

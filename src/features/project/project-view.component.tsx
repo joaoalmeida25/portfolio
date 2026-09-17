@@ -11,15 +11,16 @@ import { Fragment } from 'react';
 
 interface IProjectDetailViewProps {
   project: IProject;
+  backHref: string;
 }
 
-export const ProjectView = ({ project }: IProjectDetailViewProps) => {
+export const ProjectView = ({ project, backHref }: IProjectDetailViewProps) => {
   return (
     <Fragment>
       <ThemeToggle />
       <main className="mx-auto w-full max-w-[120rem] flex-1 px-6 pt-8 pb-16 sm:px-10 sm:pt-10 sm:pb-20 lg:px-16 xl:px-24">
         <Button
-          href="/#projects"
+          href={backHref}
           variant="ghost"
           size="sm"
           leftIcon={

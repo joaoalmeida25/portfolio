@@ -19,7 +19,7 @@ export const generateStaticParams = () => {
 
 export const generateMetadata = async ({
   params,
-}: PageProps<'/projects/[slug]'>): Promise<Metadata> => {
+}: PageProps<'/[locale]/projects/[slug]'>): Promise<Metadata> => {
   const { slug } = await params;
   const project = getProject(slug);
 
@@ -29,7 +29,7 @@ export const generateMetadata = async ({
   };
 };
 
-const ProjectPage = async ({ params }: PageProps<'/projects/[slug]'>) => {
+const ProjectPage = async ({ params }: PageProps<'/[locale]/projects/[slug]'>) => {
   const { slug } = await params;
 
   return <Project project={getProject(slug)} />;
