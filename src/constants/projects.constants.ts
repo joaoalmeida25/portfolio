@@ -34,38 +34,38 @@ export const PROJECTS: Array<IProject> = [
     },
   },
   {
-    slug: 'ai-core',
-    title: 'AI Core',
+    slug: 'neural-system-ui',
+    title: 'Neural System UI',
     shortDescription:
       'Biblioteca de interface neural 3D para representar sistemas processando, pensando e se comunicando em tempo real.',
     status: 'development',
     images: [
       {
-        src: '/images/projects/ai-core/ai-core-1.png',
-        alt: 'AI Core - visualização neural 3D 1',
+        src: '/images/projects/neural-system-ui/neural-system-ui-1.png',
+        alt: 'Neural System UI - visualização neural 3D 1',
       },
       {
-        src: '/images/projects/ai-core/ai-core-2.png',
-        alt: 'AI Core - visualização neural 3D 2',
+        src: '/images/projects/neural-system-ui/neural-system-ui-2.png',
+        alt: 'Neural System UI - visualização neural 3D 2',
       },
       {
-        src: '/images/projects/ai-core/ai-core-3.png',
-        alt: 'AI Core - visualização neural 3D 3',
+        src: '/images/projects/neural-system-ui/neural-system-ui-3.png',
+        alt: 'Neural System UI - visualização neural 3D 3',
       },
       {
-        src: '/images/projects/ai-core/ai-core-4.png',
-        alt: 'AI Core - visualização neural 3D 4',
+        src: '/images/projects/neural-system-ui/neural-system-ui-4.png',
+        alt: 'Neural System UI - visualização neural 3D 4',
       },
       {
-        src: '/images/projects/ai-core/ai-core-5.png',
-        alt: 'AI Core - visualização neural 3D 5',
+        src: '/images/projects/neural-system-ui/neural-system-ui-5.png',
+        alt: 'Neural System UI - visualização neural 3D 5',
       },
     ],
     technologies: ['React', 'TypeScript', 'Three.js', '3D', 'Real-time'],
     overview:
-      'AI Core é uma biblioteca de interface neural 3D criada para transformar processos invisíveis de um sistema em uma experiência visual interativa. Eventos, estados, conexões e comunicações passam a ser representados espacialmente e em tempo real.',
+      'Neural System UI é uma biblioteca de interface neural 3D criada para transformar processos invisíveis de um sistema em uma experiência visual interativa. Eventos, estados, conexões e comunicações passam a ser representados espacialmente e em tempo real.',
     motivation:
-      'Sistemas complexos processam informações, tomam decisões e se comunicam continuamente, mas grande parte desse comportamento permanece invisível para quem os observa. O AI Core nasceu da ideia de tornar esse funcionamento visual, compreensível e vivo.',
+      'Sistemas complexos processam informações, tomam decisões e se comunicam continuamente, mas grande parte desse comportamento permanece invisível para quem os observa. O Neural System UI nasceu da ideia de tornar esse funcionamento visual, compreensível e vivo.',
     objective:
       'Criar uma biblioteca reutilizável capaz de receber o estado e os eventos de diferentes sistemas e representá-los através de modelos 3D interativos, sem acoplar a visualização a uma aplicação ou domínio específico.',
     features: [
@@ -76,7 +76,7 @@ export const PROJECTS: Array<IProject> = [
       'Suporte a diferentes modelos e topologias visuais',
     ],
     links: {
-      github: 'https://github.com/joaoalmeida25/predator-ubuntu-sense',
+      github: 'https://github.com/joaoalmeida25/neural-system-ui',
       demo: '',
       documentation: '',
     },
