@@ -1,14 +1,20 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { PROJECTS } from '@/constants/projects.constants';
 import { ProjectsSectionView } from './projects-section-view.component';
+import type { IProjectCardData } from '@/types/projects.type';
+import type { IProjectsSectionLabels } from './projects-section.types';
 
-export const ProjectsSection = () => {
+interface IProjectsSectionProps {
+  projects: Array<IProjectCardData>;
+  labels: IProjectsSectionLabels;
+}
+
+export const ProjectsSection = ({ projects, labels }: IProjectsSectionProps) => {
   const listRef = useRef<HTMLUListElement>(null);
   const [canGoPrevious, setCanGoPrevious] = useState(false);
   const [canGoNext, setCanGoNext] = useState(false);
-  const isScrollable = PROJECTS.length >= 3;
+  const isScrollable = projects.length >= 3;
 
   useEffect(() => {
     const list = listRef.current;
@@ -49,7 +55,8 @@ export const ProjectsSection = () => {
 
   return (
     <ProjectsSectionView
-      projects={PROJECTS}
+      projects={projects}
+      labels={labels}
       listRef={listRef}
       isScrollable={isScrollable}
       canGoPrevious={canGoPrevious}

@@ -1,4 +1,5 @@
 import type { ButtonProps, ButtonSize, ButtonVariant } from './button.types';
+import { Fragment } from 'react';
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
@@ -37,14 +38,14 @@ export const Button = ({
     .join(' ');
 
   const content = (
-    <>
+    <Fragment>
       {leftIcon && (
         <span data-button-icon aria-hidden="true">
           {leftIcon}
         </span>
       )}
       {size === 'icon' ? (
-        <span data-button-icon aria-hidden="true">
+        <span data-button-icon aria-hidden="true" className="items-center justify-center">
           {children}
         </span>
       ) : (
@@ -55,7 +56,7 @@ export const Button = ({
           {rightIcon}
         </span>
       )}
-    </>
+    </Fragment>
   );
 
   if (props.href !== undefined) {

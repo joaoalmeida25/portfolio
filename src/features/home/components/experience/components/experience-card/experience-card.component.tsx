@@ -11,6 +11,10 @@ interface IExperienceCardProps {
   isCurrent: boolean;
   isSelected: boolean;
   onSelect: () => void;
+  showMoreLabel: string;
+  showLessLabel: string;
+  showMoreAriaLabel: string;
+  showLessAriaLabel: string;
 }
 
 export const ExperienceCard = ({
@@ -24,6 +28,10 @@ export const ExperienceCard = ({
   isCurrent,
   isSelected,
   onSelect,
+  showMoreLabel,
+  showLessLabel,
+  showMoreAriaLabel,
+  showLessAriaLabel,
 }: IExperienceCardProps) => {
   return (
     <article className="relative flex h-full flex-col pt-10">
@@ -44,6 +52,7 @@ export const ExperienceCard = ({
             size="sm"
             aria-expanded={isSelected}
             aria-controls={isSelected ? detailsId : undefined}
+            aria-label={isSelected ? showLessAriaLabel : showMoreAriaLabel}
             onClick={onSelect}
             rightIcon={
               <svg
@@ -62,12 +71,7 @@ export const ExperienceCard = ({
               </svg>
             }
           >
-            {isSelected ? 'Ver menos' : 'Ver mais'}
-            <span className="sr-only">
-              {' '}
-              sobre {company}
-              {context ? ` — ${context}` : ''}
-            </span>
+            {isSelected ? showLessLabel : showMoreLabel}
           </Button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button/button.component';
 import type { HeroContactIcon, HeroContactVariant } from '../../hero.types';
+import { useTranslations } from 'next-intl';
 
 interface IHeroContactLinkProps {
   label: string;
@@ -19,9 +20,11 @@ export const HeroContactLink = ({
   external = false,
   download = false,
 }: IHeroContactLinkProps) => {
+  const accessibility = useTranslations('common.accessibility');
+  const hero = useTranslations('home.hero');
   const actionProps = href
     ? { href, target: external ? '_blank' : undefined, download }
-    : { disabled: true, title: 'Currículo indisponível no momento' };
+    : { disabled: true, title: hero('resumeUnavailable') };
 
   return (
     <Button
@@ -67,8 +70,8 @@ export const HeroContactLink = ({
       }
     >
       {label}
-      {!href && <span className="sr-only"> (indisponível no momento)</span>}
-      {external && <span className="sr-only"> (abre em nova aba)</span>}
+      {!href && <span className="sr-only"> ({accessibility('unavailableNow')})</span>}
+      {external && <span className="sr-only"> ({accessibility('opensInNewTab')})</span>}
     </Button>
   );
 };

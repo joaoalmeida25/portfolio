@@ -4,8 +4,8 @@ import type { IAboutHighlightData } from './about-me.types';
 
 interface IAboutMeViewProps {
   title: string;
-  paragraphs: readonly string[];
-  highlights: readonly IAboutHighlightData[];
+  paragraphs: ReadonlyArray<string>;
+  highlights: ReadonlyArray<IAboutHighlightData>;
 }
 
 export const AboutMeView = ({ title, paragraphs, highlights }: IAboutMeViewProps) => {

@@ -5,9 +5,9 @@ import type { IEngineeringPracticeData, ITechnology } from './stack.types';
 
 interface IStackViewProps {
   title: string;
-  technologies: readonly ITechnology[];
+  technologies: ReadonlyArray<ITechnology>;
   practicesLabel: string;
-  practices: readonly IEngineeringPracticeData[];
+  practices: ReadonlyArray<IEngineeringPracticeData>;
 }
 
 export const StackView = ({ title, technologies, practicesLabel, practices }: IStackViewProps) => {

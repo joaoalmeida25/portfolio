@@ -1,10 +1,12 @@
 import type { RefObject } from 'react';
-import type { IProject } from '@/types/projects.type';
+import type { IProjectCardData } from '@/types/projects.type';
 import { Button } from '@/components/ui/button/button.component';
 import { ProjectCard } from './components/project-card/project-card.component';
+import type { IProjectsSectionLabels } from './projects-section.types';
 
 interface IProjectsSectionViewProps {
-  projects: Array<IProject>;
+  projects: Array<IProjectCardData>;
+  labels: IProjectsSectionLabels;
   listRef: RefObject<HTMLUListElement | null>;
   isScrollable: boolean;
   canGoPrevious: boolean;
@@ -15,6 +17,7 @@ interface IProjectsSectionViewProps {
 
 export const ProjectsSectionView = ({
   projects,
+  labels,
   listRef,
   isScrollable,
   canGoPrevious,
@@ -34,14 +37,14 @@ export const ProjectsSectionView = ({
             id="projects-title"
             className="text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl"
           >
-            Projetos
+            {labels.title}
           </h2>
           {isScrollable && (canGoPrevious || canGoNext) && (
-            <div role="group" aria-label="Navegação dos projetos" className="flex shrink-0 gap-2">
+            <div role="group" aria-label={labels.navigation} className="flex shrink-0 gap-2">
               <Button
                 variant="ghost"
                 size="icon"
-                aria-label="Ver projetos anteriores"
+                aria-label={labels.previous}
                 aria-controls="projects-list"
                 disabled={!canGoPrevious}
                 onClick={onPrevious}
@@ -62,7 +65,7 @@ export const ProjectsSectionView = ({
               <Button
                 variant="ghost"
                 size="icon"
-                aria-label="Ver próximos projetos"
+                aria-label={labels.next}
                 aria-controls="projects-list"
                 disabled={!canGoNext}
                 onClick={onNext}
@@ -86,7 +89,7 @@ export const ProjectsSectionView = ({
         <ul
           id="projects-list"
           ref={listRef}
-          aria-label="Projetos"
+          aria-label={labels.title}
           tabIndex={isScrollable && (canGoPrevious || canGoNext) ? 0 : undefined}
           className={`relative mt-10 grid lg:mt-12 ${
             isScrollable

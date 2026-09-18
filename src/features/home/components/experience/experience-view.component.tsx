@@ -3,10 +3,11 @@ import { SectionHeading } from '../section-heading/section-heading.component';
 import { ExperienceCard } from './components/experience-card/experience-card.component';
 import { ExperienceDetails } from './components/experience-details/experience-details.component';
 import { ExperienceNavigation } from './components/experience-navigation/experience-navigation.component';
-import type { IProfessionalExperience } from './experience.types';
+import type { IExperienceLabels, IProfessionalExperience } from './experience.types';
 
 interface IExperienceViewProps {
-  experiences: readonly IProfessionalExperience[];
+  experiences: ReadonlyArray<IProfessionalExperience>;
+  labels: IExperienceLabels;
   activeExperience: IProfessionalExperience | null;
   activeTimelineIndex: number;
   timelineRef: RefObject<HTMLOListElement | null>;
@@ -19,6 +20,7 @@ interface IExperienceViewProps {
 
 export const ExperienceView = ({
   experiences,
+  labels,
   activeExperience,
   activeTimelineIndex,
   timelineRef,
@@ -35,7 +37,7 @@ export const ExperienceView = ({
     >
       <div className="mx-auto min-w-0 max-w-[120rem] px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24 xl:px-24">
         <div className="flex flex-wrap items-center justify-between gap-5 lg:flex-nowrap">
-          <SectionHeading id="experience-title" title="Experiência profissional" />
+          <SectionHeading id="experience-title" title={labels.title} />
           <div className="flex items-center gap-4">
             <ExperienceNavigation
               timelineId="experience-timeline"
@@ -43,6 +45,9 @@ export const ExperienceView = ({
               canGoNext={canGoNext}
               onPrevious={onPrevious}
               onNext={onNext}
+              navigationLabel={labels.navigation}
+              previousLabel={labels.previous}
+              nextLabel={labels.next}
             />
           </div>
         </div>
@@ -50,7 +55,7 @@ export const ExperienceView = ({
         <ol
           id="experience-timeline"
           ref={timelineRef}
-          aria-label="Experiências da mais recente para a mais antiga"
+          aria-label={labels.timeline}
           className="scrollbar-hidden mt-8 grid auto-cols-[100%] grid-flow-col gap-6 overflow-x-auto overscroll-x-contain scroll-px-4 snap-x snap-mandatory px-4 pt-2 pb-1 after:hidden after:content-[''] md:auto-cols-[calc((100%_-_1.5rem)/2)] md:after:block lg:mt-10 lg:auto-cols-[calc((100%_-_3rem)/3)] lg:after:col-span-2"
         >
           {experiences.map((experience, index) => (
@@ -72,6 +77,10 @@ export const ExperienceView = ({
                 isCurrent={index === activeTimelineIndex}
                 isSelected={activeExperience?.id === experience.id}
                 onSelect={() => onSelect(experience.id)}
+                showMoreLabel={labels.showMore}
+                showLessLabel={labels.showLess}
+                showMoreAriaLabel={experience.showMoreAriaLabel}
+                showLessAriaLabel={experience.showLessAriaLabel}
               />
             </li>
           ))}
@@ -81,6 +90,7 @@ export const ExperienceView = ({
           <ExperienceDetails
             id={`experience-details-${activeExperience.id}`}
             details={activeExperience.details}
+            title={labels.contributions}
           />
         )}
       </div>

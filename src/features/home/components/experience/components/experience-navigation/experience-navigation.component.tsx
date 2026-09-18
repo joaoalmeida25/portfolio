@@ -6,6 +6,9 @@ interface IExperienceNavigationProps {
   canGoNext: boolean;
   onPrevious: () => void;
   onNext: () => void;
+  navigationLabel: string;
+  previousLabel: string;
+  nextLabel: string;
 }
 
 export const ExperienceNavigation = ({
@@ -14,17 +17,16 @@ export const ExperienceNavigation = ({
   canGoNext,
   onPrevious,
   onNext,
+  navigationLabel,
+  previousLabel,
+  nextLabel,
 }: IExperienceNavigationProps) => {
   return (
-    <div
-      role="group"
-      aria-label="Navegação da timeline profissional"
-      className="flex shrink-0 gap-2"
-    >
+    <div role="group" aria-label={navigationLabel} className="flex shrink-0 gap-2">
       <Button
         variant="ghost"
         size="icon"
-        aria-label="Rolar para experiências mais recentes"
+        aria-label={previousLabel}
         aria-controls={timelineId}
         disabled={!canGoPrevious}
         onClick={onPrevious}
@@ -47,7 +49,7 @@ export const ExperienceNavigation = ({
       <Button
         variant="ghost"
         size="icon"
-        aria-label="Rolar para experiências mais antigas"
+        aria-label={nextLabel}
         aria-controls={timelineId}
         disabled={!canGoNext}
         onClick={onNext}

@@ -1,13 +1,13 @@
 import { Button } from '@/components/ui/button/button.component';
 import { ProjectPreview } from '@/components/project-preview/project-preview.component';
-import { IProject } from '@/types/projects.type';
+import type { IProjectCardData } from '@/types/projects.type';
 import { ProjectStatus } from '@/components/project-status/project-status.component';
 import { ProjectTechnologies } from '@/components/project-technologies/project-technologies.component';
 import { getPathname } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 
 interface IProjectCardProps {
-  project: IProject;
+  project: IProjectCardData;
   imageSizes?: string;
 }
 
@@ -23,14 +23,14 @@ export const ProjectCard = ({
     <article className="h-full min-w-0">
       <Button
         href={href}
-        aria-label={`Abrir projeto ${project.title}`}
+        aria-label={project.ariaLabel}
         variant="ghost"
         size="sm"
         className="group relative !grid h-full !min-h-0 min-w-0 !items-stretch !justify-stretch gap-0 !overflow-hidden !rounded-card !border-border/60 !bg-surface/40 !p-3 text-left !font-normal shadow-card hover:!border-primary/30 hover:!bg-surface-hover/60 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-5"
       >
         <ProjectPreview
           title={project.title}
-          image={project.images[0]}
+          image={project.image}
           sizes={imageSizes}
           className="!aspect-[4/3] self-center rounded-control"
           imageClassName="object-cover"

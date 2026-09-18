@@ -11,6 +11,32 @@ export interface IProjectImage {
   alt: string;
 }
 
+export interface IProjectDefinitionImage {
+  src: string;
+}
+
+export type ProjectFeatureKey =
+  | 'environmentDiagnostics'
+  | 'rgbControl'
+  | 'performanceProfiles'
+  | 'batteryAndDeviceSettings'
+  | 'privilegedExecution'
+  | 'threeDimensionalRepresentation'
+  | 'realTimeEventPropagation'
+  | 'visualStatesAndActivities'
+  | 'elementInspection'
+  | 'visualTopologies';
+
+export interface IProjectDefinition {
+  slug: string;
+  title: string;
+  status: ProjectStatus;
+  images: Array<IProjectDefinitionImage>;
+  technologies: Array<string>;
+  featureKeys: Array<ProjectFeatureKey>;
+  links: IProjectLinks;
+}
+
 export interface IProject {
   slug: string;
   title: string;
@@ -23,4 +49,14 @@ export interface IProject {
   objective: string;
   features: Array<string>;
   links: IProjectLinks;
+}
+
+export interface IProjectCardData {
+  slug: string;
+  title: string;
+  shortDescription: string;
+  status: ProjectStatus;
+  image?: IProjectImage;
+  technologies: Array<string>;
+  ariaLabel: string;
 }

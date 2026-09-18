@@ -1,30 +1,27 @@
 import { AboutMeView } from './about-me-view.component';
 import type { IAboutHighlightData } from './about-me.types';
-import { useMemo } from 'react';
-
-const paragraphs = [
-  'Me chamo João Vitor e sou engenheiro de software. Sempre fui apaixonado por tecnologia e acredito no poder dela para simplificar e criar oportunidades.',
-  'Gosto de resolver problemas reais, transformando-os em produtos que geram impacto positivo na vida das pessoas.',
-  'Sou curioso, persistente e estou sempre em busca de novos aprendizados, desafios e pessoas que compartilham essa visão.',
-];
+import { useTranslations } from 'next-intl';
 
 export const AboutMe = () => {
-  const highlights = useMemo(
-    (): Array<IAboutHighlightData> => [
-      { title: '7+ anos', description: 'de experiência profissional', icon: 'experience' },
-      {
-        title: 'Problemas reais',
-        description: 'transformados em soluções úteis',
-        icon: 'solution',
-      },
-      {
-        title: 'Evolução constante',
-        description: 'curiosidade, aprendizado e novos desafios',
-        icon: 'learning',
-      },
-    ],
-    [],
-  );
+  const t = useTranslations('home.about');
+  const paragraphs = ['introduction', 'impact', 'growth'].map((key) => t(`paragraphs.${key}`));
+  const highlights: Array<IAboutHighlightData> = [
+    {
+      title: t('highlights.experience.title'),
+      description: t('highlights.experience.description'),
+      icon: 'experience',
+    },
+    {
+      title: t('highlights.solution.title'),
+      description: t('highlights.solution.description'),
+      icon: 'solution',
+    },
+    {
+      title: t('highlights.learning.title'),
+      description: t('highlights.learning.description'),
+      icon: 'learning',
+    },
+  ];
 
-  return <AboutMeView title="Sobre mim" paragraphs={paragraphs} highlights={highlights} />;
+  return <AboutMeView title={t('title')} paragraphs={paragraphs} highlights={highlights} />;
 };

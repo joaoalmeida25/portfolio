@@ -1,1 +1,81 @@
-{}
+{
+  "ui": {
+    "title": "Professional experience",
+    "timeline": "Experience from most recent to oldest",
+    "navigation": "Professional timeline navigation",
+    "previous": "Scroll to more recent experience",
+    "next": "Scroll to older experience",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "showMoreAbout": "Show more about {company} — {context}",
+    "showLessAbout": "Show less about {company} — {context}",
+    "contributions": "Key contributions"
+  },
+  "items": {
+    "logshare": {
+      "period": "02/2024 — Present",
+      "context": "Logistics",
+      "role": "Senior Software Engineer",
+      "summary": "Logistics SaaS product using React/Next.js, Node.js/TypeScript, microfrontends, integrations, and cloud.",
+      "details": {
+        "fullstackDevelopment": "Development and evolution of fullstack solutions using Next.js/React, Node.js/TypeScript, APIs, a relational database, and domain-based organization.",
+        "centralizedConsole": "Development and evolution of a Console with centralized login, permissions, and integration across different applications.",
+        "microfrontends": "Implementation and evolution of microfrontends integrating products such as Copilot and Connect.",
+        "authenticationAndIntegrations": "Work on authentication, authorization, contracts between applications, integrations, and production features.",
+        "cloudDelivery": "Support for cloud delivery using Docker, AWS, CI/CD, pipelines, and development workflow standardization."
+      }
+    },
+    "ciandt-yduqs": {
+      "period": "05/2021 — 02/2024",
+      "context": "YDUQS / Estácio",
+      "role": "Senior Software Engineer",
+      "summary": "Educational products using React, Node.js, TypeScript, NestJS, AWS, and automated testing.",
+      "details": {
+        "fullstackDevelopment": "Development and evolution of fullstack features using React, Node.js, TypeScript, NestJS, Clean Architecture, AWS, DynamoDB, and Terraform.",
+        "studentAssessment": "Work on an application supporting student assessment workflows.",
+        "administrativeTool": "Evolution of an administrative tool for registering and managing courses.",
+        "testingStandards": "Establishment of testing standards using Jest, React Testing Library, and Cypress.",
+        "continuousImprovement": "Work on features, refactors, bug investigation, authentication, performance, and continuous quality improvement."
+      }
+    },
+    "ciandt-sulamerica": {
+      "period": "10/2020 — 05/2021",
+      "context": "SulAmérica",
+      "role": "Mid-level Software Engineer",
+      "summary": "Mobile application and backend services using TypeScript/Ionic, Java/Spring, and integrations.",
+      "details": {
+        "mobileDevelopment": "Development and evolution of mobile features using TypeScript, Ionic, and Cordova.",
+        "backendIntegration": "Integration between the application and backend services in customer service workflows.",
+        "microservices": "Work with microservices using Java 8, Spring Boot, Spring Cloud/Feign, Google Data Store, and Resilience4j.",
+        "automatedTests": "Implementation and maintenance of tests using Jest, Cypress, Spock/Groovy, and Cucumber.",
+        "legacyEvolution": "Investigation, correction, and incremental evolution of a legacy system."
+      }
+    },
+    "stefanini": {
+      "period": "09/2019 — 10/2020",
+      "context": "Polícia Federal",
+      "role": "Web Developer",
+      "summary": "Enterprise systems using Java 11, Angular, APIs, JPA/Hibernate, and Oracle.",
+      "details": {
+        "corporateSystems": "Development of features and integrations in enterprise systems used by Polícia Federal.",
+        "technicalStack": "Work using Java 11, Angular 8, JPA/Hibernate, JAX-RS, and JAX-WS.",
+        "databaseAndIntegrations": "Work with an Oracle database and integrations between applications.",
+        "developmentTools": "Use of Git/GitLab, JUnit, and Mockito.",
+        "applicationMaintenance": "Evolutionary maintenance and support of applications with sensitive business rules."
+      }
+    },
+    "banco-do-brasil": {
+      "period": "10/2018 — 09/2019",
+      "context": "DIRAO",
+      "role": "Web Developer",
+      "summary": "Internal systems using Java, JSF, PrimeFaces, JPA, and MySQL.",
+      "details": {
+        "javaApplications": "Development of improvements and fixes in enterprise Java applications.",
+        "interfaceDevelopment": "Interface development using JSF and PrimeFaces.",
+        "persistence": "Work with JPA/EclipseLink and a MySQL database.",
+        "internalSystems": "Maintenance and evolution of internal systems.",
+        "operationalContinuity": "Contribution to application stability and operational continuity."
+      }
+    }
+  }
+}

@@ -1,1 +1,49 @@
-{}
+{
+  "imageAlt": "{title} — image {index} of {total}",
+  "detail": {
+    "back": "Back",
+    "overview": "Overview",
+    "motivation": "Motivation",
+    "objective": "Objective",
+    "features": "Key features",
+    "stack": "Stack",
+    "gallery": "{title} gallery",
+    "image": "Image",
+    "imageNavigation": "Image navigation",
+    "previousImage": "Previous image",
+    "nextImage": "Next image"
+  },
+  "actions": {
+    "github": "GitHub",
+    "demo": "Demo",
+    "documentation": "Documentation"
+  },
+  "items": {
+    "predator-ubuntu-sense": {
+      "shortDescription": "An open-source control center for Acer Predator laptops on Linux, bringing hardware and system features together in a desktop experience.",
+      "overview": "An open-source desktop application created to centralize features specific to Acer Predator laptops on Linux, starting with the PHN16-73.",
+      "motivation": "Many features available in PredatorSense on Windows have no official equivalent experience on Linux, requiring separate tools and configurations.",
+      "objective": "Create a secure, user-friendly layer that orchestrates features already available on Linux without requiring the interface to run as root or reimplementing kernel drivers.",
+      "features": {
+        "environmentDiagnostics": "Environment and hardware diagnostics",
+        "rgbControl": "RGB control",
+        "performanceProfiles": "Performance profiles",
+        "batteryAndDeviceSettings": "Battery limiter and device settings",
+        "privilegedExecution": "Controlled privileged execution through a helper"
+      }
+    },
+    "neural-system-ui": {
+      "shortDescription": "A 3D neural interface library for representing systems as they process, think, and communicate in real time.",
+      "overview": "Neural System UI is a 3D neural interface library created to turn a system's invisible processes into an interactive visual experience. Events, states, connections, and communications are represented spatially and in real time.",
+      "motivation": "Complex systems continuously process information, make decisions, and communicate, but much of this behavior remains invisible to observers. Neural System UI grew from the idea of making these processes visual, understandable, and alive.",
+      "objective": "Create a reusable library capable of receiving state and events from different systems and representing them through interactive 3D models, without coupling the visualization to a specific application or domain.",
+      "features": {
+        "threeDimensionalRepresentation": "3D representation of nodes, connections, and structures",
+        "realTimeEventPropagation": "Visual propagation of events in real time",
+        "visualStatesAndActivities": "Visually represented states and activities",
+        "elementInspection": "Interaction, selection, and inspection of elements",
+        "visualTopologies": "Support for different visual models and topologies"
+      }
+    }
+  }
+}

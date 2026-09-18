@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import { locale as getLocale } from 'next/root-params';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { DEFAULT_THEME, THEME_STORAGE_KEY } from '@/constants/theme.constants';
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/constants/site.constants';
 import '@/styles/globals.css';
 
 const geistSans = Geist({
@@ -18,8 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'João Almeida | Software Engineer',
-  description: 'Software Engineer com experiência em React, Node.js e Java.',
+  metadataBase: new URL(SITE_URL),
 };
 
 const themeScript = `(() => {
@@ -43,6 +45,8 @@ const RootLayout = async ({ children }: LayoutProps<'/[locale]'>) => {
 
   if (!hasLocale(routing.locales, locale)) notFound();
 
+  const messages = await getMessages();
+
   return (
     <html
       lang={locale}
@@ -50,13 +54,15 @@ const RootLayout = async ({ children }: LayoutProps<'/[locale]'>) => {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider locale={locale} messages={null}>
+        <NextIntlClientProvider locale={locale} messages={{ common: messages.common }}>
           {children}
         </NextIntlClientProvider>
+        <Script
+          id="theme-bootstrap"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
       </body>
     </html>
   );

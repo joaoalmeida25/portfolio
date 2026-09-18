@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button/button.component';
 import { ProjectPreview } from '@/components/project-preview/project-preview.component';
 import type { IProjectImage } from '@/types/projects.type';
+import type { IProjectGalleryLabels } from '../../project.types';
 
 interface IProjectGalleryViewProps {
   title: string;
@@ -8,6 +9,7 @@ interface IProjectGalleryViewProps {
   imageId: string;
   activeIndex: number;
   onSelect: (index: number) => void;
+  labels: IProjectGalleryLabels;
 }
 
 export const ProjectGalleryView = ({
@@ -16,11 +18,12 @@ export const ProjectGalleryView = ({
   imageId,
   activeIndex,
   onSelect,
+  labels,
 }: IProjectGalleryViewProps) => {
   const hasMultipleImages = images.length > 1;
 
   return (
-    <div role="group" aria-label={`Galeria de ${title}`} className="min-w-0">
+    <div role="group" aria-label={labels.gallery} className="min-w-0">
       <div id={imageId} className="overflow-hidden rounded-control bg-background-soft">
         <ProjectPreview
           title={title}
@@ -37,14 +40,14 @@ export const ProjectGalleryView = ({
             aria-atomic="true"
             className="text-sm whitespace-nowrap text-text-muted tabular-nums"
           >
-            <span className="sr-only">Imagem </span>
+            <span className="sr-only">{labels.image} </span>
             {activeIndex + 1} / {images.length}
           </p>
-          <div role="group" aria-label="Navegação das imagens" className="flex shrink-0 gap-2">
+          <div role="group" aria-label={labels.navigation} className="flex shrink-0 gap-2">
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Imagem anterior"
+              aria-label={labels.previous}
               aria-controls={imageId}
               disabled={activeIndex === 0}
               onClick={() => onSelect(activeIndex - 1)}
@@ -65,7 +68,7 @@ export const ProjectGalleryView = ({
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Próxima imagem"
+              aria-label={labels.next}
               aria-controls={imageId}
               disabled={activeIndex === images.length - 1}
               onClick={() => onSelect(activeIndex + 1)}

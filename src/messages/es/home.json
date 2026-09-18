@@ -1,1 +1,45 @@
-{}
+{
+  "hero": {
+    "email": "Enviar correo electrónico",
+    "resume": "Currículum",
+    "resumeUnavailable": "Currículum no disponible en este momento",
+    "description": "Transformo ideas en productos digitales escalables, con foco en el impacto en el mundo real."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraphs": {
+      "introduction": "Me llamo João Vitor y soy ingeniero de software. Siempre me ha apasionado la tecnología y creo en su poder para simplificar y crear oportunidades.",
+      "impact": "Me gusta resolver problemas reales y transformarlos en productos que generan un impacto positivo en la vida de las personas.",
+      "growth": "Soy curioso, persistente y siempre busco nuevos aprendizajes, desafíos y personas que compartan esta visión."
+    },
+    "highlights": {
+      "experience": {
+        "title": "7+ años",
+        "description": "de experiencia profesional"
+      },
+      "solution": {
+        "title": "Problemas reales",
+        "description": "transformados en soluciones útiles"
+      },
+      "learning": {
+        "title": "Evolución constante",
+        "description": "curiosidad, aprendizaje y nuevos desafíos"
+      }
+    }
+  },
+  "stack": {
+    "title": "Stack",
+    "practicesLabel": "Prácticas de ingeniería",
+    "practices": {
+      "automatedTesting": "Pruebas automatizadas",
+      "aiAssistedDevelopment": "Desarrollo asistido por IA"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "navigation": "Navegación de proyectos",
+    "previous": "Ver proyectos anteriores",
+    "next": "Ver proyectos siguientes",
+    "openProject": "Abrir proyecto {title}"
+  }
+}

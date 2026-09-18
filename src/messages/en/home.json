@@ -1,1 +1,45 @@
-{}
+{
+  "hero": {
+    "email": "Send email",
+    "resume": "Resume",
+    "resumeUnavailable": "Resume currently unavailable",
+    "description": "I turn ideas into scalable digital products, focusing on real-world impact."
+  },
+  "about": {
+    "title": "About me",
+    "paragraphs": {
+      "introduction": "My name is João Vitor, and I am a software engineer. I have always been passionate about technology and believe in its power to simplify and create opportunities.",
+      "impact": "I enjoy solving real problems and turning them into products that make a positive impact on people's lives.",
+      "growth": "I am curious, persistent, and always looking for new learning opportunities, challenges, and people who share this vision."
+    },
+    "highlights": {
+      "experience": {
+        "title": "7+ years",
+        "description": "of professional experience"
+      },
+      "solution": {
+        "title": "Real problems",
+        "description": "turned into useful solutions"
+      },
+      "learning": {
+        "title": "Continuous growth",
+        "description": "curiosity, learning, and new challenges"
+      }
+    }
+  },
+  "stack": {
+    "title": "Stack",
+    "practicesLabel": "Engineering practices",
+    "practices": {
+      "automatedTesting": "Automated Testing",
+      "aiAssistedDevelopment": "AI-assisted development"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "navigation": "Project navigation",
+    "previous": "View previous projects",
+    "next": "View next projects",
+    "openProject": "Open project {title}"
+  }
+}

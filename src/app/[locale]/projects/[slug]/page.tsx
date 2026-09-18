@@ -1,38 +1,46 @@
 import type { Metadata } from 'next';
+import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { PROJECTS } from '@/constants/projects.constants';
+import { PROJECT_DEFINITIONS } from '@/constants/projects.constants';
 import { Project } from '@/features/project/project.component';
-
-const getProject = (slug: string) => {
-  const project = PROJECTS.find((project) => project.slug === slug);
-
-  if (!project) notFound();
-
-  return project;
-};
+import { getLocalizedProject } from '@/features/project/project-content';
+import { getLocalizedAlternates } from '@/i18n/metadata';
+import { routing } from '@/i18n/routing';
 
 export const dynamicParams = false;
 
 export const generateStaticParams = () => {
-  return PROJECTS.map((project) => ({ slug: project.slug }));
+  return PROJECT_DEFINITIONS.map((project) => ({ slug: project.slug }));
 };
 
 export const generateMetadata = async ({
   params,
 }: PageProps<'/[locale]/projects/[slug]'>): Promise<Metadata> => {
-  const { slug } = await params;
-  const project = getProject(slug);
+  const { locale, slug } = await params;
+
+  if (!hasLocale(routing.locales, locale)) notFound();
+
+  const project = await getLocalizedProject(slug, locale);
+
+  if (!project) notFound();
 
   return {
     title: `${project.title} | João Almeida`,
     description: project.shortDescription,
+    alternates: getLocalizedAlternates(`/projects/${project.slug}`, locale),
   };
 };
 
 const ProjectPage = async ({ params }: PageProps<'/[locale]/projects/[slug]'>) => {
-  const { slug } = await params;
+  const { locale, slug } = await params;
 
-  return <Project project={getProject(slug)} />;
+  if (!hasLocale(routing.locales, locale)) notFound();
+
+  const project = await getLocalizedProject(slug, locale);
+
+  if (!project) notFound();
+
+  return <Project project={project} />;
 };
 
 export default ProjectPage;

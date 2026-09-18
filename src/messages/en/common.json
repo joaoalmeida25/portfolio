@@ -1,1 +1,27 @@
-{}
+{
+  "theme": {
+    "loading": "Loading theme",
+    "enableLight": "Enable light theme",
+    "enableDark": "Enable dark theme"
+  },
+  "language": {
+    "toggle": "Select language",
+    "current": "Current language: {language}",
+    "select": "Switch language to {language}",
+    "options": "Language options",
+    "names": {
+      "pt-BR": "Portuguese",
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "projectStatus": {
+    "development": "In development",
+    "completed": "Completed"
+  },
+  "projectTechnologies": "Project technologies",
+  "accessibility": {
+    "unavailableNow": "currently unavailable",
+    "opensInNewTab": "opens in a new tab"
+  }
+}

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button/button.component';
 import { PROJECT_ACTIONS } from './project-actions.constants';
 import { IProjectLinks } from '@/types/projects.type';
+import { useTranslations } from 'next-intl';
 
 interface IProjectActionsProps {
   links: IProjectLinks;
@@ -13,6 +14,9 @@ const isYouTubeLink = (href: string) => {
 };
 
 export const ProjectActions = ({ links }: IProjectActionsProps) => {
+  const actions = useTranslations('projects.actions');
+  const accessibility = useTranslations('common.accessibility');
+
   return (
     <div className="mt-10 flex flex-wrap gap-3 border-t border-border/50 pt-8">
       {PROJECT_ACTIONS.map((action) => {
@@ -45,7 +49,7 @@ export const ProjectActions = ({ links }: IProjectActionsProps) => {
         if (!href) {
           return (
             <Button key={action.key} variant="secondary" size="md" disabled leftIcon={icon}>
-              {action.label}
+              {actions(action.key)}
             </Button>
           );
         }
@@ -60,8 +64,8 @@ export const ProjectActions = ({ links }: IProjectActionsProps) => {
             rel="noopener noreferrer"
             leftIcon={icon}
           >
-            {action.label}
-            <span className="sr-only"> (abre em nova aba)</span>
+            {actions(action.key)}
+            <span className="sr-only"> ({accessibility('opensInNewTab')})</span>
           </Button>
         );
       })}

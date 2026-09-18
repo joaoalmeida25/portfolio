@@ -2,14 +2,13 @@
 
 import { useTheme } from '@/hooks/use-theme/use-theme.hook';
 import { Button } from '@/components/ui/button/button.component';
+import { FLOATING_CONTROL_BUTTON_CLASSES } from '@/components/floating-controls/floating-controls.constants';
+import { useTranslations } from 'next-intl';
 
 export const ThemeToggle = () => {
+  const t = useTranslations('common.theme');
   const { theme, toggleTheme, isHydrated } = useTheme();
-  const label = !isHydrated
-    ? 'Carregando tema'
-    : theme === 'dark'
-      ? 'Ativar tema claro'
-      : 'Ativar tema escuro';
+  const label = !isHydrated ? t('loading') : theme === 'dark' ? t('enableLight') : t('enableDark');
 
   return (
     <Button
@@ -18,7 +17,7 @@ export const ThemeToggle = () => {
       onClick={toggleTheme}
       disabled={!isHydrated}
       aria-label={label}
-      className="fixed top-[calc(1rem_+_env(safe-area-inset-top,0px))] right-[calc(1rem_+_env(safe-area-inset-right,0px))] z-50 sm:top-[calc(1.5rem_+_env(safe-area-inset-top,0px))] sm:right-[calc(1.5rem_+_env(safe-area-inset-right,0px))]"
+      className={FLOATING_CONTROL_BUTTON_CLASSES}
     >
       <svg
         viewBox="0 0 24 24"

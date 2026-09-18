@@ -2,9 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { ExperienceView } from './experience-view.component';
-import { experiences } from '@/features/home/components/experience/experience.constants';
+import type { IExperienceLabels, IProfessionalExperience } from './experience.types';
 
-export const Experience = () => {
+interface IExperienceProps {
+  experiences: Array<IProfessionalExperience>;
+  labels: IExperienceLabels;
+}
+
+export const Experience = ({ experiences, labels }: IExperienceProps) => {
   const timelineRef = useRef<HTMLOListElement>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeTimelineIndex, setActiveTimelineIndex] = useState(0);
@@ -41,7 +46,7 @@ export const Experience = () => {
       observer.disconnect();
       timeline.removeEventListener('scroll', updateNavigation);
     };
-  }, []);
+  }, [experiences.length]);
 
   const navigate = (direction: -1 | 1) => {
     const timeline = timelineRef.current;
@@ -66,6 +71,7 @@ export const Experience = () => {
   return (
     <ExperienceView
       experiences={experiences}
+      labels={labels}
       activeExperience={activeExperience}
       activeTimelineIndex={activeTimelineIndex}
       timelineRef={timelineRef}

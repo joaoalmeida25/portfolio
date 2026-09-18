@@ -1,7 +1,9 @@
 import { StackView } from './stack-view.component';
 import type { IEngineeringPracticeData, ITechnology } from './stack.types';
+import { useTranslations } from 'next-intl';
 
 export const Stack = () => {
+  const t = useTranslations('home.stack');
   const technologies: Array<ITechnology> = [
     { name: 'React', iconPath: '/icons/brands/react.svg' },
     { name: 'Next.js', iconPath: '/icons/brands/nextjs.svg', monochrome: true },
@@ -17,17 +19,17 @@ export const Stack = () => {
 
   const practices: Array<IEngineeringPracticeData> = [
     { label: 'Clean Architecture' },
-    { label: 'Automated Testing' },
+    { label: t('practices.automatedTesting') },
     { label: 'CI/CD' },
     { label: 'Cloud' },
-    { label: 'AI-assisted development' },
+    { label: t('practices.aiAssistedDevelopment') },
   ];
 
   return (
     <StackView
-      title="Stack"
+      title={t('title')}
       technologies={technologies}
-      practicesLabel="Práticas de engenharia"
+      practicesLabel={t('practicesLabel')}
       practices={practices}
     />
   );

@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button/button.component';
-import { ThemeToggle } from '@/components/theme-toggle/theme-toggle.component';
+import { FloatingControls } from '@/components/floating-controls/floating-controls.component';
 import { Footer } from '@/features/home/components/footer/footer.component';
 import { ProjectActions } from './components/project-actions/project-actions.component';
 import { ProjectInfoCard } from './components/project-info-card/project-info-card.component';
@@ -8,6 +8,7 @@ import { ProjectStatus } from '@/components/project-status/project-status.compon
 import { ProjectTechnologies } from '@/components/project-technologies/project-technologies.component';
 import { IProject } from '@/types/projects.type';
 import { Fragment } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface IProjectDetailViewProps {
   project: IProject;
@@ -15,9 +16,11 @@ interface IProjectDetailViewProps {
 }
 
 export const ProjectView = ({ project, backHref }: IProjectDetailViewProps) => {
+  const t = useTranslations('projects.detail');
+
   return (
     <Fragment>
-      <ThemeToggle />
+      <FloatingControls />
       <main className="mx-auto w-full max-w-[120rem] flex-1 px-6 pt-8 pb-16 sm:px-10 sm:pt-10 sm:pb-20 lg:px-16 xl:px-24">
         <Button
           href={backHref}
@@ -38,7 +41,7 @@ export const ProjectView = ({ project, backHref }: IProjectDetailViewProps) => {
             </svg>
           }
         >
-          Voltar
+          {t('back')}
         </Button>
 
         <header className="mt-6 grid gap-8 rounded-card border border-border/60 bg-surface/40 p-4 sm:mt-8 sm:p-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:p-8">
@@ -51,13 +54,23 @@ export const ProjectView = ({ project, backHref }: IProjectDetailViewProps) => {
               {project.shortDescription}
             </p>
           </div>
-          <ProjectGallery title={project.title} images={project.images} />
+          <ProjectGallery
+            title={project.title}
+            images={project.images}
+            labels={{
+              gallery: t('gallery', { title: project.title }),
+              image: t('image'),
+              navigation: t('imageNavigation'),
+              previous: t('previousImage'),
+              next: t('nextImage'),
+            }}
+          />
         </header>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:mt-10 lg:grid-cols-3">
-          <ProjectInfoCard title="Visão geral" content={project.overview} />
-          <ProjectInfoCard title="Motivação" content={project.motivation} />
-          <ProjectInfoCard title="Objetivo" content={project.objective} />
+          <ProjectInfoCard title={t('overview')} content={project.overview} />
+          <ProjectInfoCard title={t('motivation')} content={project.motivation} />
+          <ProjectInfoCard title={t('objective')} content={project.objective} />
         </div>
 
         <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
@@ -66,7 +79,7 @@ export const ProjectView = ({ project, backHref }: IProjectDetailViewProps) => {
             className="min-w-0 rounded-card border border-border/50 bg-surface/50 p-6"
           >
             <h2 id="project-features-title" className="text-lg font-semibold text-text-primary">
-              Principais funcionalidades
+              {t('features')}
             </h2>
             <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-7 text-text-secondary marker:text-primary">
               {project.features.map((feature) => (
@@ -79,7 +92,7 @@ export const ProjectView = ({ project, backHref }: IProjectDetailViewProps) => {
             className="min-w-0 rounded-card border border-border/50 bg-surface/50 p-6"
           >
             <h2 id="project-stack-title" className="text-lg font-semibold text-text-primary">
-              Stack
+              {t('stack')}
             </h2>
             <div className="mt-3">
               <ProjectTechnologies technologies={project.technologies} />

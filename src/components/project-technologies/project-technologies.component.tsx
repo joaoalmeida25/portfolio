@@ -1,10 +1,14 @@
+import { useTranslations } from 'next-intl';
+
 interface IProjectTechnologiesProps {
   technologies: Array<string>;
 }
 
 export const ProjectTechnologies = ({ technologies }: IProjectTechnologiesProps) => {
+  const t = useTranslations('common');
+
   return (
-    <ul aria-label="Tecnologias do projeto" className="flex flex-wrap gap-2">
+    <ul aria-label={t('projectTechnologies')} className="flex flex-wrap gap-2">
       {technologies.map((technology) => (
         <li
           key={technology}
