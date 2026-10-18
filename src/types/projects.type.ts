@@ -13,6 +13,7 @@ export interface IProjectImage {
 
 export interface IProjectDefinitionImage {
   src: string;
+  altKey?: string;
 }
 
 export type ProjectFeatureKey =
@@ -25,7 +26,13 @@ export type ProjectFeatureKey =
   | 'realTimeEventPropagation'
   | 'visualStatesAndActivities'
   | 'elementInspection'
-  | 'visualTopologies';
+  | 'visualTopologies'
+  | 'institutionalExperience'
+  | 'digitalProductCatalog'
+  | 'productDetails'
+  | 'commercialJourneys'
+  | 'internationalizationAndSeo'
+  | 'responsiveDesignSystem';
 
 export interface IProjectDefinition {
   slug: string;

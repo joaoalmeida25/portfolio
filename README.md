@@ -49,6 +49,7 @@ src/
 
 ## Projetos
 
+- **[Dev Cosmo Lab](https://devcosmolab.com/):** projeto autoral de engenharia web e UX/UI para um negócio real, com website institucional, catálogo de produtos digitais e jornadas comerciais integradas. Desenvolvido com Next.js App Router, React, TypeScript strict, Tailwind CSS, next-intl e Vercel, com Server Components, componentes reutilizáveis, três idiomas e temas dark/light. Apresentado em primeiro lugar, com quatro capturas reais do website e detalhes em `/projects/dev-cosmo-lab`, `/en/projects/dev-cosmo-lab` e `/es/projects/dev-cosmo-lab`. Status `development` até a confirmação de homologação da V1. [Código-fonte](https://github.com/joaoalmeida25/dev-cosmo-lab-web).
 - **Predator Ubuntu Sense:** control center open source para notebooks Acer Predator no Linux, centralizando recursos de hardware e sistema em uma experiência desktop.
 - **Neural System UI:** biblioteca de interface neural 3D para representar sistemas processando, pensando e se comunicando em tempo real.
 

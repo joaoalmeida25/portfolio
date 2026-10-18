@@ -2,6 +2,43 @@ import type { IProjectDefinition } from '@/types/projects.type';
 
 export const PROJECT_DEFINITIONS: Array<IProjectDefinition> = [
   {
+    slug: 'dev-cosmo-lab',
+    title: 'Dev Cosmo Lab',
+    status: 'completed',
+    images: [
+      {
+        src: '/images/projects/dev-cosmo-lab/home-dark.webp',
+        altKey: 'homeDark',
+      },
+      {
+        src: '/images/projects/dev-cosmo-lab/products.webp',
+        altKey: 'productCatalog',
+      },
+      {
+        src: '/images/projects/dev-cosmo-lab/propostas-em-dia.webp',
+        altKey: 'productDetails',
+      },
+      {
+        src: '/images/projects/dev-cosmo-lab/home-light.webp',
+        altKey: 'homeLight',
+      },
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'next-intl', 'Vercel'],
+    featureKeys: [
+      'institutionalExperience',
+      'digitalProductCatalog',
+      'productDetails',
+      'commercialJourneys',
+      'internationalizationAndSeo',
+      'responsiveDesignSystem',
+    ],
+    links: {
+      github: 'https://github.com/joaoalmeida25/dev-cosmo-lab-web',
+      demo: 'https://devcosmolab.com/',
+      documentation: '',
+    },
+  },
+  {
     slug: 'predator-ubuntu-sense',
     title: 'Predator Ubuntu Sense',
     status: 'development',

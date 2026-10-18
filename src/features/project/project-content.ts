@@ -22,11 +22,13 @@ export const getLocalizedProjects = cache(async (locale: Locale): Promise<Array<
     ),
     images: definition.images.map((image, index) => ({
       src: image.src,
-      alt: t('imageAlt', {
-        title: definition.title,
-        index: index + 1,
-        total: definition.images.length,
-      }),
+      alt: image.altKey
+        ? t(`items.${definition.slug}.images.${image.altKey}`)
+        : t('imageAlt', {
+            title: definition.title,
+            index: index + 1,
+            total: definition.images.length,
+          }),
     })),
   }));
 });

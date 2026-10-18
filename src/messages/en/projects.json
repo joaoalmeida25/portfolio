@@ -19,6 +19,26 @@
     "documentation": "Documentation"
   },
   "items": {
+    "dev-cosmo-lab": {
+      "shortDescription": "A web platform combining digital products and custom software development services with a modern, responsive, multilingual experience.",
+      "overview": "Dev Cosmo Lab is a technology brand created to develop digital products, offer custom software solutions, and share knowledge. To turn that vision into a real digital presence, I developed its web platform, bringing together identity, user experience, and commercial functionality in a modern application. The project combines a custom interface, a product catalog, and an organized front-end architecture built with Next.js, React, and TypeScript.",
+      "motivation": "Dev Cosmo Lab grew out of a desire to build my own brand, one that reflected my perspective on technology, creativity, and software development. The challenge went beyond visual identity: creating a digital experience that could communicate the brand’s purpose, present its solutions, and lay the groundwork for its growth. This meant balancing art direction, usability, performance, and sustainable technical decisions.",
+      "objective": "Turn Dev Cosmo Lab’s identity into a functional, accessible web platform with room to evolve. The application needed to introduce the brand, connect visitors with digital products and custom services, and provide consistent navigation across devices and languages. The implementation prioritized reusable components, architectural clarity, visual quality, and integration with real paths to purchase and project inquiries.",
+      "features": {
+        "institutionalExperience": "Brand experience: a home page built around the Cosmic Minimal Premium identity, with a custom visual composition, brand introduction, featured products, and development services.",
+        "digitalProductCatalog": "Digital product catalog: search, filters, sorting, categories, and availability indicators for exploring products at different stages of development.",
+        "productDetails": "Product pages: detailed presentations with a gallery, specifications, included resources, usage steps, frequently asked questions, and demo videos when available.",
+        "commercialJourneys": "Commercial integration: connection to an external checkout for product purchases and WhatsApp contact for custom software development opportunities.",
+        "internationalizationAndSeo": "Internationalization and SEO: an experience in Portuguese, English, and Spanish, with localized routing, metadata, canonical URLs, and Open Graph for sharing.",
+        "responsiveDesignSystem": "Design system and responsiveness: reusable components, semantic tokens, dark/light themes, responsive layouts, and attention to accessibility and navigation."
+      },
+      "images": {
+        "homeDark": "Dev Cosmo Lab home page in dark mode, featuring the Cosmic Observatory Hero, brand introduction, and calls to action.",
+        "productCatalog": "Dev Cosmo Lab digital product catalog with search, filters, sorting, and availability indicators.",
+        "productDetails": "Propostas em Dia kit page with a gallery, product introduction, specifications, and access to the external checkout.",
+        "homeLight": "Dev Cosmo Lab home page in light mode, featuring the Cosmic Observatory Hero and a visual identity adapted to the theme."
+      }
+    },
     "predator-ubuntu-sense": {
       "shortDescription": "An open-source control center for Acer Predator laptops on Linux, bringing hardware and system features together in a desktop experience.",
       "overview": "An open-source desktop application created to centralize features specific to Acer Predator laptops on Linux, starting with the PHN16-73.",
